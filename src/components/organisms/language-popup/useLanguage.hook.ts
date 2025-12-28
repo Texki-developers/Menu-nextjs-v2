@@ -1,10 +1,14 @@
 "use client";
 
 import { LOCAL_STORAGE_KEYS } from "@/constants/common-keys";
+import { useRouter } from "@/i18n/navigation";
 import { useLanguageStore } from "@/store/language/language.store";
+import { useLocale } from "next-intl";
 import { useEffect } from "react";
 
 const useLanguage = () => {
+  const router = useRouter();
+  const currentLocale = useLocale();
   const { setPopupOpen, togglePopup: togglePopupStore } = useLanguageStore();
 
   useEffect(() => {
@@ -19,7 +23,13 @@ const useLanguage = () => {
     }
   }, [setPopupOpen]);
 
-  const handleUserDefaultLocale = () => {};
+  const handleUserDefaultLocale = (locale: string) => {
+    localStorage.setItem(LOCAL_STORAGE_KEYS.USER_DEFAULT_LOCALE, locale);
+    togglePopupStore();
+    if (currentLocale !== locale) {
+      router.push(`/`, { locale });
+    }
+  };
 
   return { handleUserDefaultLocale };
 };

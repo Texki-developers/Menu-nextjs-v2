@@ -7,20 +7,20 @@ import LanguageCard from "@/components/atoms/language-card/LanguageCard";
 import useLanguage from "./useLanguage.hook";
 
 const LanguagePopup = () => {
-    const { isPopupOpen, togglePopup } = useLanguageStore();
+    const { isPopupOpen } = useLanguageStore();
     const { handleUserDefaultLocale } = useLanguage();
 
     return (
         <BottomSheetWrapper
             onClose={() => {
-                togglePopup();
+                handleUserDefaultLocale("en");
             }}
             show={isPopupOpen}>
             <div className="grid grid-cols-2 gap-6 p-6 overflow-y-auto">
                 {languageConfig?.map((language) => (
                     <LanguageCard
                         onClick={() => {
-                            console.log(language.locale);
+                            handleUserDefaultLocale(language.locale);
                         }}
                         key={language.locale}
                         language={language}
