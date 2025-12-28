@@ -17,12 +17,14 @@ export default async function RootLayout({ children, params }: { children: React
 
     return (
         <html lang={locale}>
-            <body>
-                <NextIntlClientProvider>
-                    <LanguagePopup />
-                    {children}
-                    <BottomTabs />
-                </NextIntlClientProvider>
+            <body className="w-full min-h-dvh h-full relative">
+                <div className="container">
+                    <NextIntlClientProvider>
+                        <LanguagePopup />
+                        {children}
+                        <BottomTabs />
+                    </NextIntlClientProvider>
+                </div>
             </body>
         </html>
     );

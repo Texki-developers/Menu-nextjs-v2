@@ -12,7 +12,10 @@ interface BottomSheetWrapperProps {
 
 const BottomSheetWrapper: React.FC<BottomSheetWrapperProps> = ({ children, show, onClose }) => {
     const [hidden, setHidden] = useState(true);
+
     useEffect(() => {
+        if (typeof document === "undefined") return;
+
         if (show) {
             document.body.style.overflow = "hidden";
             setTimeout(() => {
@@ -29,6 +32,9 @@ const BottomSheetWrapper: React.FC<BottomSheetWrapperProps> = ({ children, show,
         }
     }, [show]);
 
+    if (typeof document === "undefined") {
+        return null;
+    }
 
     return createPortal(
         <div
@@ -42,7 +48,7 @@ const BottomSheetWrapper: React.FC<BottomSheetWrapperProps> = ({ children, show,
                 {children}
             </div>
         </div>,
-        window.document.body
+        document.body
     );
 };
 

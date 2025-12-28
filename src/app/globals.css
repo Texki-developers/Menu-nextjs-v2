@@ -35,3 +35,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+
+.container {
+  @apply max-w-[400px] mx-auto;
+}
