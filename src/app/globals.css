@@ -8,9 +8,10 @@
   --bg: #ffffff;
   --text: #171717;
   --border: #e5e7eb;
+  --popup: #eeeeee;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -20,7 +21,7 @@
     --text: #ededed;
     --border: #374151;
   }
-}
+} */
 
 @theme inline {
   --color-background: var(--background);
@@ -30,6 +31,7 @@
   --color-bg: var(--bg);
   --color-text: var(--text);
   --color-border: var(--border);
+  --color-popup: var(--popup);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
