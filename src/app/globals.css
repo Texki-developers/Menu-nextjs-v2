@@ -37,5 +37,11 @@
 }
 
 .container {
-  @apply max-w-[400px] mx-auto;
+  @apply max-w-[440px] mx-auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

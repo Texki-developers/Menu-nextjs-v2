@@ -5,7 +5,7 @@ import BottomTabsIcons from "@/components/atoms/bottom-tabs-icons/BottomTabsIcon
 
 const BottomTabs = () => {
     return (
-        <div className="fixed bottom-0 flex px-6 py-4 justify-between items-center left-0 w-full border-t border-border  bg-white">
+        <div className="fixed bottom-0 flex px-6! py-3! justify-between items-center left-0 w-full border-t border-border bg-white">
             {bottomTabsConfig.map((tab) => (
                 <BottomTabsIcons
                     key={tab.id}
