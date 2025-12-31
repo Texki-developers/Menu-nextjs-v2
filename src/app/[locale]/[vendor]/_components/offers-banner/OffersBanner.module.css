@@ -1,0 +1,10 @@
+.swiperWrapper :global(.swiper-pagination-bullet) {
+    background-color: #d1d5db;
+    opacity: 1;
+}
+
+.swiperWrapper :global(.swiper-pagination-bullet-active) {
+    background-color: var(--primary);
+    border: 1px solid var(--background);
+    box-sizing: border-box;
+}

@@ -5,8 +5,8 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 type ContainerProps = React.HTMLAttributes<HTMLDivElement>;
 
 interface SearchInputProps {
-    inputProps: InputProps;
-    containerProps: ContainerProps;
+    inputProps?: InputProps;
+    containerProps?: ContainerProps;
     icon?: React.ReactNode;
 }
 
