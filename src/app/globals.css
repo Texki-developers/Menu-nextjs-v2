@@ -9,6 +9,9 @@
   --text: #171717;
   --border: #e5e7eb;
   --popup: #eeeeee;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --black: #000000;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -32,6 +35,9 @@
   --color-text: var(--text);
   --color-border: var(--border);
   --color-popup: var(--popup);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --color-black: var(--black);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

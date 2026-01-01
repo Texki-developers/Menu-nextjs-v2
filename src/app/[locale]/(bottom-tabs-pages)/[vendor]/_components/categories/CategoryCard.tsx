@@ -10,7 +10,7 @@ interface CategoryCardProps {
 const CategoryCard: React.FC<CategoryCardProps> = ({ imageUrl, title }) => {
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="w-20 h-20 rounded-lg overflow-hidden relative">
+      <div className="w-20 h-20 rounded-2xl overflow-hidden relative">
         <Image
           src={imageUrl}
           alt={title}

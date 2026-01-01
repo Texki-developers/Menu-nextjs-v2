@@ -13,7 +13,7 @@ interface SearchInputProps {
 const SearchInput = ({ inputProps, containerProps, icon }: SearchInputProps) => {
     return (
         <div
-            className="w-full relative"
+            className="w-full relative bg-white rounded-2xl"
             {...containerProps}>
             <input
                 type="text"

@@ -1,6 +1,7 @@
 import SearchInput from "@/components/atoms/search-input/SearchInput";
 import OffersBanner from "../offers-banner/OffersBanner";
 import Categories from "../categories/Categories";
+import ProductListing from "../products/ProductListing";
 
 const VendorTemplate = () => {
     return (
@@ -8,6 +9,7 @@ const VendorTemplate = () => {
             <SearchInput />
             <Categories />
             <OffersBanner />
+            <ProductListing />
         </div>
     );
 };

@@ -10,8 +10,8 @@ import "swiper/css";
 const Categories = () => {
     const [slidesPerView, setSlidesPerView] = useState(3.5);
     const cardWidth = 80;
-    const spaceBetween = 16;
-    const containerPadding = 32; // Approximate padding (px-4 on both sides = 16px * 2)
+    const spaceBetween = 10;
+    const containerPadding = 2; // Approximate padding (px-4 on both sides = 16px * 2)
 
     const calculateSlidesPerView = () => {
         if (typeof window === "undefined") return 3.5;
