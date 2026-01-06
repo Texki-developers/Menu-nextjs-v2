@@ -22,16 +22,6 @@ const OffersBanner = () => {
                     delay: 2500,
                     disableOnInteraction: false,
                 }}
-                breakpoints={{
-                    640: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 16,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 16,
-                    },
-                }}
                 onSlideChange={() => console.log("slide change")}
                 onSwiper={(swiper) => console.log(swiper)}>
                 <SwiperSlide style={{ width: "100%" }}>

@@ -45,3 +45,7 @@
 .container {
   @apply max-w-[440px] mx-auto;
 }
+
+.max-w-container {
+  @apply max-w-[440px] mx-auto;
+}

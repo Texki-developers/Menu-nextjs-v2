@@ -16,8 +16,8 @@ export default async function RootLayout({ children, params }: { children: React
     }
 
     return (
-        <html lang={locale}>
-            <body className="w-full min-h-dvh h-full relative">
+        <html lang={locale} className="bg-black">
+            <body className="w-full min-h-dvh max-w-container mx-auto h-full relative">
                 <div className="container">
                     <NextIntlClientProvider>
                         <LanguagePopup />

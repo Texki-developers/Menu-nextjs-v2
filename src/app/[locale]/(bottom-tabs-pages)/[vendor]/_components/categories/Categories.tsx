@@ -14,12 +14,17 @@ const Categories = () => {
     const containerPadding = 2; // Approximate padding (px-4 on both sides = 16px * 2)
 
     const calculateSlidesPerView = () => {
+        console.log("🚀 ~ calculateSlidesPerView ~ windowWidth:")
         if (typeof window === "undefined") return 3.5;
 
-        const windowWidth = window.innerWidth;
+        const windowWidth = Math.min(window.innerWidth, 440);
+        console.log("🚀 ~ calculateSlidesPerView ~ windowWidth:", windowWidth)
         const availableWidth = windowWidth - containerPadding;
+        console.log("🚀 ~ calculateSlidesPerView ~ availableWidth:", availableWidth)
         const cardWithSpacing = cardWidth + spaceBetween;
+        console.log("🚀 ~ calculateSlidesPerView ~ cardWithSpacing:", cardWithSpacing)
         const calculated = availableWidth / cardWithSpacing;
+        console.log("🚀 ~ calculateSlidesPerView ~ calculated:", calculated)
 
         return calculated;
     };
