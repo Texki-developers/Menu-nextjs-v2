@@ -1,0 +1,49 @@
+"use client";
+
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { HeroBannerConfig } from "./hero-banner.config";
+
+interface HeroOfferBannerProps {
+    banner: HeroBannerConfig;
+}
+
+const HeroOfferBanner = ({ banner }: HeroOfferBannerProps) => {
+    return (
+        <div className="relative w-full h-[320px] rounded-3xl overflow-hidden shadow-2xl shadow-yellow-500/20 mb-8 group">
+            {/* Background Image with Zoom Effect */}
+            <div className="absolute inset-0 w-full h-full">
+                <Image
+                    src={banner.image}
+                    alt={banner.title}
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+            </div>
+
+            {/* Gradient Overlay for Text Readability */}
+            <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent"></div>
+
+            {/* Content Container */}
+            <div className="absolute inset-0 p-6 flex flex-col justify-center items-start text-white">
+                <div className="bg-yellow-400 text-black text-xs font-black px-3 py-1 rounded-full mb-2 uppercase tracking-widest animate-pulse">
+                    {banner.badge}
+                </div>
+
+                <h2 className="text-4xl font-black mb-0.5 leading-tight">{banner.discount}</h2>
+                <h3 className="text-2xl font-bold text-yellow-300 mb-1.5">{banner.title}</h3>
+
+                <p className="text-gray-200 text-sm max-w-[60%] mb-4 leading-relaxed line-clamp-2">
+                    {banner.description}
+                </p>
+
+                <button className="bg-white text-black px-6 py-3 rounded-xl font-bold text-sm shadow-lg hover:bg-yellow-400 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+                    Claim Offer <ArrowRight size={16} />
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default HeroOfferBanner;
+

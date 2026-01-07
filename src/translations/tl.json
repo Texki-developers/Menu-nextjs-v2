@@ -1,0 +1,11 @@
+{
+  "Home": {
+    "title": "Home"
+  },
+  "BottomTabs": {
+    "home": "Home",
+    "offers": "Mga Alok",
+    "cart": "Cart",
+    "account": "Account"
+  }
+}

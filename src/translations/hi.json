@@ -1,0 +1,12 @@
+{
+  "Home": {
+    "title": "होम"
+  },
+  "BottomTabs": {
+    "home": "होम",
+    "offers": "ऑफ़र्स",
+    "cart": "कार्ट",
+    "account": "खाता"
+  }
+}
+

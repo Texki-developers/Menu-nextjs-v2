@@ -1,0 +1,12 @@
+{
+  "Home": {
+    "title": "首页"
+  },
+  "BottomTabs": {
+    "home": "首页",
+    "offers": "优惠",
+    "cart": "购物车",
+    "account": "账户"
+  }
+}
+

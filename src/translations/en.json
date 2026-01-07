@@ -1,5 +1,11 @@
 {
   "Home": {
     "title": "Home"
+  },
+  "BottomTabs": {
+    "home": "Home",
+    "offers": "Offers",
+    "cart": "Cart",
+    "account": "Account"
   }
 }
