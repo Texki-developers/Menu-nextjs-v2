@@ -1,8 +1,9 @@
-import VendorTemplate from "./_components/vendor-id-template/VendorTemplate";
+import VendorTemplate from "./_listing/_components/vendor-id-template/VendorTemplate";
 
 const page = () => {
+
     return (
-        <div className="p-4 w-full bg-gray-100">
+        <div className="p-4 w-full bg-background">
             <VendorTemplate />
         </div>
     );

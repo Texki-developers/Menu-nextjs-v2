@@ -1,13 +1,14 @@
 "use client";
 
 import { LOCAL_STORAGE_KEYS } from "@/constants/common-keys";
-import { useRouter } from "@/i18n/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import { useLanguageStore } from "@/store/language/language.store";
 import { useLocale } from "next-intl";
 import { useEffect } from "react";
 
 const useLanguage = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const currentLocale = useLocale();
   const { setPopupOpen, togglePopup: togglePopupStore } = useLanguageStore();
 
@@ -27,7 +28,7 @@ const useLanguage = () => {
     localStorage.setItem(LOCAL_STORAGE_KEYS.USER_DEFAULT_LOCALE, locale);
     togglePopupStore();
     if (currentLocale !== locale) {
-      router.push(`/`, { locale });
+      router.replace(pathname, { locale });
     }
   };
 
