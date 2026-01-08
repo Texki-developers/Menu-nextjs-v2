@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Sparkles, Tag, Plus } from "lucide-react";
 import Price from "@/components/organisms/price/Price";
+import { Button } from "@/components/atoms/button";
 
 interface OfferItem {
     image: string;
@@ -86,14 +87,15 @@ const OfferCard = ({ item, isHighlighted, aiReason }: OfferCardProps) => {
                         offerPriceColor="gray"
                     />
 
-                    <button
-                        className={`${item.btnColor} active:scale-95 transition-all text-white pr-5 pl-4 py-3 rounded-full flex items-center gap-2 font-bold shadow-lg shadow-orange-200 hover:shadow-orange-300 hover:brightness-105`}>
-                        <Plus
-                            size={18}
-                            strokeWidth={3}
-                        />
-                        <span>Add to Order</span>
-                    </button>
+                    <Button
+                        variant="primary"
+                        size="base"
+                        rounded="full"
+                        leftIcon={<Plus size={18} strokeWidth={3} />}
+                        className={`${item.btnColor} shadow-lg shadow-orange-200 hover:shadow-orange-300 hover:brightness-105`}
+                    >
+                        Add to Order
+                    </Button>
                 </div>
             </div>
         </div>

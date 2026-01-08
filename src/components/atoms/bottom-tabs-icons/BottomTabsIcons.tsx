@@ -12,7 +12,6 @@ interface BottomTabsIconsProps {
 }
 
 const BottomTabsIcons: React.FC<BottomTabsIconsProps> = ({ tab }) => {
-    console.log("🚀 ~ BottomTabsIcons ~ tab:", tab)
     const { setActiveTab } = useBottomTabsStore();
     const pathname = usePathname();
     const router = useRouter();

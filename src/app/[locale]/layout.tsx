@@ -22,7 +22,6 @@ export default async function RootLayout({ children, params }: { children: React
                     <NextIntlClientProvider>
                         <LanguagePopup />
                         {children}
-                        <BottomTabs />
                     </NextIntlClientProvider>
                 </div>
             </body>

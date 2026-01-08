@@ -11,6 +11,7 @@ import {
     ChevronRight,
     Heart,
 } from "lucide-react";
+import { Button } from "@/components/atoms/button";
 
 // Mock data for past orders
 const PAST_ORDERS_MOCK = [
@@ -47,9 +48,9 @@ const AccountScreen = () => {
             <div className="bg-white pb-6 pt-12 px-6 rounded-b-3xl shadow-sm mb-6">
                 <div className="flex items-center justify-between mb-6">
                     <h2 className="text-2xl font-bold text-gray-900">My Profile</h2>
-                    <button className="p-2 bg-gray-50 rounded-full text-gray-600 hover:bg-gray-100">
+                    <Button variant="ghost" iconOnly size="base" rounded="full" className="bg-gray-50">
                         <Bell size={20} />
-                    </button>
+                    </Button>
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -86,7 +87,9 @@ const AccountScreen = () => {
             <div className="px-5 mb-6">
                 <div className="flex justify-between items-center mb-4">
                     <h3 className="font-bold text-gray-900">Recent Orders</h3>
-                    <button className="text-xs font-bold text-orange-600">View All</button>
+                    <Button variant="text-primary" size="xs">
+                        View All
+                    </Button>
                 </div>
 
                 <div className="space-y-4">
@@ -102,9 +105,14 @@ const AccountScreen = () => {
                                 </div>
                                 <p className="text-xs text-gray-500 mb-3">{order.date} • AED {order.total}</p>
 
-                                <button className="w-full bg-orange-50 text-orange-700 text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1 active:scale-95 transition-transform">
-                                    <RotateCcw size={12} /> Reorder
-                                </button>
+                                <Button
+                                    variant="orange-ghost"
+                                    size="sm"
+                                    fullWidth
+                                    leftIcon={<RotateCcw size={12} />}
+                                >
+                                    Reorder
+                                </Button>
                             </div>
                         </div>
                     ))}
@@ -116,18 +124,24 @@ const AccountScreen = () => {
                 {[
                     { icon: Heart, label: "Saved Items" },
                     { icon: HelpCircle, label: "Help & Support" },
-                    { icon: LogOut, label: "Log Out", color: "text-red-500" },
+                    { icon: LogOut, label: "Log Out", variant: "text-destructive" as const },
                 ].map((item, idx) => (
-                    <button
+                    <Button
                         key={idx}
-                        className="w-full bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between active:scale-[0.98] transition-transform"
+                        variant="outline"
+                        fullWidth
+                        size="base"
+                        rounded="lg"
+                        rightIcon={<ChevronRight size={18} className="text-gray-300" />}
+                        className="justify-between p-4"
                     >
                         <div className="flex items-center gap-3">
-                            <item.icon size={20} className={item.color || "text-gray-500"} />
-                            <span className={`text-sm font-bold ${item.color || "text-gray-700"}`}>{item.label}</span>
+                            <item.icon size={20} className={item.variant === "text-destructive" ? "text-red-500" : "text-gray-500"} />
+                            <span className={item.variant === "text-destructive" ? "text-red-500" : "text-gray-700"}>
+                                {item.label}
+                            </span>
                         </div>
-                        <ChevronRight size={18} className="text-gray-300" />
-                    </button>
+                    </Button>
                 ))}
             </div>
         </div>

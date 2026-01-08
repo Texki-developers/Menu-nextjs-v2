@@ -1,3 +1,10 @@
+"use client";
+
+import { ArrowLeft } from "lucide-react";
+import { useRouter } from "@/i18n/navigation";
+import { useParams } from "next/navigation";
+import { Button } from "@/components/atoms/button";
+
 interface CartHeaderProps {
     tableNumber?: string;
     deliveryTime?: string;
@@ -7,13 +14,38 @@ const CartHeader = ({
     tableNumber = "Table 12",
     deliveryTime = "Ready in 15-20 mins",
 }: CartHeaderProps) => {
+    const router = useRouter();
+    const { vendor }: { vendor: string } = useParams();
+
+    const handleBack = () => {
+        // Check if there's history to go back to
+        if (typeof window !== "undefined" && window.history.length > 1) {
+            router.back();
+        } else {
+            // If no history, navigate to home
+            router.push(`/${vendor}/`);
+        }
+    };
+
     return (
         <div className="bg-white p-5 pb-6 rounded-b-3xl shadow-sm border-b border-gray-100">
             <div className="flex items-center justify-between mb-2">
-                <h2 className="text-lg font-bold text-gray-900">Cart</h2>
-                <button className="text-red-500 text-sm font-semibold hover:bg-red-50 px-2 py-1 rounded-lg transition-colors">
+                <div className="flex items-center gap-3">
+                    <Button
+                        onClick={handleBack}
+                        variant="ghost"
+                        iconOnly
+                        size="base"
+                        rounded="full"
+                        aria-label="Go back"
+                    >
+                        <ArrowLeft size={20} className="text-gray-900" />
+                    </Button>
+                    <h2 className="text-lg font-bold text-gray-900">Cart</h2>
+                </div>
+                <Button variant="text-destructive" size="sm" rounded="md">
                     Clear
-                </button>
+                </Button>
             </div>
 
             {/* Table Number Card */}

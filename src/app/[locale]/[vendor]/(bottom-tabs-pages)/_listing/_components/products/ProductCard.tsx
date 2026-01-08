@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Heart, Star, Plus, Minus } from "lucide-react";
 import Price from "@/components/organisms/price/Price";
+import { Button } from "@/components/atoms/button";
 
 interface ProductCardProps {
     item: {
@@ -44,15 +45,20 @@ const ProductCard = ({ item }: ProductCardProps) => {
                 )}
 
                 {/* BIGGER FAVORITE BUTTON */}
-                <button
-                    className="absolute top-2 right-2 w-10 h-10 flex items-center justify-center bg-white/30 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-red-500 transition-colors active:scale-90 touch-manipulation shadow-sm"
-                    aria-label="Add to favorites">
+                <Button
+                    variant="ghost"
+                    iconOnly
+                    size="base"
+                    rounded="full"
+                    className="absolute top-2 right-2 bg-white/30 backdrop-blur-md text-white hover:bg-white hover:text-red-500 shadow-sm"
+                    aria-label="Add to favorites"
+                >
                     <Heart
                         size={20}
                         fill={qty > 0 ? "currentColor" : "none"}
                         className={qty > 0 ? "text-red-500" : ""}
                     />
-                </button>
+                </Button>
             </div>
 
             {/* Content Section */}
@@ -104,28 +110,41 @@ const ProductCard = ({ item }: ProductCardProps) => {
 
                     {/* Smart Action Button (Stepper) - OPTIMIZED FOR TOUCH */}
                     {qty === 0 ? (
-                        <button
+                        <Button
                             onClick={handleAdd}
-                            className="bg-gray-900 text-white px-8 py-3 rounded-xl text-sm font-bold shadow-md shadow-gray-200 hover:bg-gray-800 active:scale-95 transition-all touch-manipulation">
+                            variant="secondary"
+                            size="base"
+                            rounded="md"
+                        >
                             Add
-                        </button>
+                        </Button>
                     ) : (
                         <div className="flex items-center bg-gray-900 rounded-xl overflow-hidden shadow-md shadow-gray-200 h-11">
-                            <button
+                            <Button
                                 onClick={handleDec}
-                                className="w-12 h-full flex items-center justify-center text-white hover:bg-white/20 active:bg-white/30 transition-colors touch-manipulation"
-                                aria-label="Decrease quantity">
+                                variant="ghost"
+                                iconOnly
+                                size="base"
+                                rounded="none"
+                                className="w-12 h-full text-white hover:bg-white/20 active:bg-white/30"
+                                aria-label="Decrease quantity"
+                            >
                                 <Minus size={20} />
-                            </button>
+                            </Button>
                             <span className="text-white text-sm font-bold w-8 text-center tabular-nums">
                                 {qty}
                             </span>
-                            <button
+                            <Button
                                 onClick={handleInc}
-                                className="w-12 h-full flex items-center justify-center text-white hover:bg-white/20 active:bg-white/30 transition-colors touch-manipulation"
-                                aria-label="Increase quantity">
+                                variant="ghost"
+                                iconOnly
+                                size="base"
+                                rounded="none"
+                                className="w-12 h-full text-white hover:bg-white/20 active:bg-white/30"
+                                aria-label="Increase quantity"
+                            >
                                 <Plus size={20} />
-                            </button>
+                            </Button>
                         </div>
                     )}
                 </div>
