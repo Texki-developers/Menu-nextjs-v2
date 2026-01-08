@@ -72,7 +72,7 @@ const Price = ({
                 <span
                     className={cn(
                         offerPriceVariants({ size: offerPriceSize, color: offerPriceColor }),
-                        "mb-0.5"
+                        "mb-0"
                     )}>
                     {showCurrency && currency && (
                         <>
