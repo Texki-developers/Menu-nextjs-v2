@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
-import { Plus, Minus, Trash2 } from "lucide-react";
+import { Trash2 } from "lucide-react";
 import Price from "@/components/organisms/price/Price";
 import { CartItemConfig } from "../../cart.config";
 import { Button } from "@/components/atoms/button";
+import { QuantityStepper } from "@/components/molecules/quantity-stepper";
 
 interface CartItemProps {
     item: CartItemConfig;
@@ -46,27 +49,13 @@ const CartItem = ({ item }: CartItemProps) => {
                     />
 
                     {/* Thumb-friendly Stepper */}
-                    <div className="flex items-center gap-3 bg-gray-50 rounded-xl p-1 border border-gray-100 shadow-inner">
-                        <Button
-                            variant="outline"
-                            iconOnly
-                            size="xs"
-                            rounded="md"
-                            className="bg-white hover:text-red-500"
-                        >
-                            <Minus size={14} strokeWidth={3} />
-                        </Button>
-                        <span className="text-sm font-bold w-4 text-center">{item.qty}</span>
-                        <Button
-                            variant="outline"
-                            iconOnly
-                            size="xs"
-                            rounded="md"
-                            className="bg-white hover:text-green-600"
-                        >
-                            <Plus size={14} strokeWidth={3} />
-                        </Button>
-                    </div>
+                    <QuantityStepper
+                        quantity={item.qty}
+                        onIncrease={() => { }}
+                        onDecrease={() => { }}
+                        min={1}
+                        variant="compact"
+                    />
                 </div>
             </div>
         </div>

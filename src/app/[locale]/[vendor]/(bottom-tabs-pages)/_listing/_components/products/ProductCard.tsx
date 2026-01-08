@@ -2,13 +2,17 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Heart, Star, Plus, Minus } from "lucide-react";
+import { Heart, Star } from "lucide-react";
+import { useRouter } from "@/i18n/navigation";
+import { useParams } from "next/navigation";
 import Price from "@/components/organisms/price/Price";
 import { Button } from "@/components/atoms/button";
+import { QuantityStepper } from "@/components/molecules/quantity-stepper";
 
 interface ProductCardProps {
     item: {
         id: string;
+        slug: string;
         image: string;
         title: string;
         price: string | number;
@@ -23,13 +27,29 @@ interface ProductCardProps {
 
 const ProductCard = ({ item }: ProductCardProps) => {
     const [qty, setQty] = useState(0);
+    const router = useRouter();
+    const params = useParams();
+    const vendor = params?.vendor as string | undefined;
 
     const handleAdd = () => setQty(1);
     const handleInc = () => setQty((q) => q + 1);
     const handleDec = () => setQty((q) => (q - 1 > 0 ? q - 1 : 0));
 
+    const handleCardClick = () => {
+        if (vendor && item.slug) {
+            router.push(`/${vendor}/${item.slug}`);
+        }
+    };
+
+    const handleButtonClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
+    };
+
     return (
-        <div className="bg-white p-3 h-full rounded-2xl border border-gray-100 shadow-sm flex gap-4 relative overflow-hidden group">
+        <div
+            className="bg-white p-3 h-full rounded-2xl border border-gray-100 shadow-sm flex gap-4 relative overflow-hidden group cursor-pointer"
+            onClick={handleCardClick}
+        >
             {/* Product Image Section */}
             <div className="w-30 shrink-0 relative rounded-xl overflow-hidden bg-gray-100">
                 <Image
@@ -50,8 +70,9 @@ const ProductCard = ({ item }: ProductCardProps) => {
                     iconOnly
                     size="base"
                     rounded="full"
-                    className="absolute top-2 right-2 bg-white/30 backdrop-blur-md text-white hover:bg-white hover:text-red-500 shadow-sm"
+                    className="absolute top-2 right-2 bg-white/30 backdrop-blur-md text-white hover:bg-white hover:text-red-500 shadow-sm z-10"
                     aria-label="Add to favorites"
+                    onClick={handleButtonClick}
                 >
                     <Heart
                         size={20}
@@ -111,7 +132,10 @@ const ProductCard = ({ item }: ProductCardProps) => {
                     {/* Smart Action Button (Stepper) - OPTIMIZED FOR TOUCH */}
                     {qty === 0 ? (
                         <Button
-                            onClick={handleAdd}
+                            onClick={(e) => {
+                                handleButtonClick(e);
+                                handleAdd();
+                            }}
                             variant="secondary"
                             size="base"
                             rounded="md"
@@ -119,32 +143,14 @@ const ProductCard = ({ item }: ProductCardProps) => {
                             Add
                         </Button>
                     ) : (
-                        <div className="flex items-center bg-gray-900 rounded-xl overflow-hidden shadow-md shadow-gray-200 h-11">
-                            <Button
-                                onClick={handleDec}
-                                variant="ghost"
-                                iconOnly
-                                size="base"
-                                rounded="none"
-                                className="w-12 h-full text-white hover:bg-white/20 active:bg-white/30"
-                                aria-label="Decrease quantity"
-                            >
-                                <Minus size={20} />
-                            </Button>
-                            <span className="text-white text-sm font-bold w-8 text-center tabular-nums">
-                                {qty}
-                            </span>
-                            <Button
-                                onClick={handleInc}
-                                variant="ghost"
-                                iconOnly
-                                size="base"
-                                rounded="none"
-                                className="w-12 h-full text-white hover:bg-white/20 active:bg-white/30"
-                                aria-label="Increase quantity"
-                            >
-                                <Plus size={20} />
-                            </Button>
+                        <div onClick={handleButtonClick}>
+                            <QuantityStepper
+                                quantity={qty}
+                                onIncrease={handleInc}
+                                onDecrease={handleDec}
+                                min={1}
+                                variant="dark"
+                            />
                         </div>
                     )}
                 </div>
