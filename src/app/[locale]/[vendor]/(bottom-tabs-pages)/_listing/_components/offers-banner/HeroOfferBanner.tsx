@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { HeroBannerConfig } from "./offers-banner.config";
+import { Button } from "@/components/atoms/button";
 
 interface HeroOfferBannerProps {
     banner: HeroBannerConfig;
@@ -37,9 +38,15 @@ const HeroOfferBanner = ({ banner }: HeroOfferBannerProps) => {
                     {banner.description}
                 </p>
 
-                <button className="bg-white text-black px-6 py-3 rounded-xl font-bold text-sm shadow-lg hover:bg-yellow-400 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
-                    Claim Offer <ArrowRight size={16} />
-                </button>
+                <Button
+                    variant="outline"
+                    size="base"
+                    rounded="md"
+                    rightIcon={<ArrowRight size={16} />}
+                    className="bg-white text-black shadow-lg hover:bg-yellow-400"
+                >
+                    Claim Offer
+                </Button>
             </div>
         </div>
     );

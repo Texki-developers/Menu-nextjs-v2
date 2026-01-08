@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Plus, Minus, Trash2 } from "lucide-react";
 import Price from "@/components/organisms/price/Price";
 import { CartItemConfig } from "../../cart.config";
+import { Button } from "@/components/atoms/button";
 
 interface CartItemProps {
     item: CartItemConfig;
@@ -27,9 +28,9 @@ const CartItem = ({ item }: CartItemProps) => {
                         <h4 className="font-bold text-gray-800 text-sm leading-tight pr-4">
                             {item.title}
                         </h4>
-                        <button className="text-gray-300 hover:text-red-500 transition-colors">
+                        <Button variant="ghost" iconOnly size="sm" className="text-gray-300 hover:text-red-500">
                             <Trash2 size={16} />
-                        </button>
+                        </Button>
                     </div>
                     <p className="text-[11px] text-gray-400 mt-1 leading-normal line-clamp-2">
                         {item.extras}
@@ -46,13 +47,25 @@ const CartItem = ({ item }: CartItemProps) => {
 
                     {/* Thumb-friendly Stepper */}
                     <div className="flex items-center gap-3 bg-gray-50 rounded-xl p-1 border border-gray-100 shadow-inner">
-                        <button className="w-7 h-7 flex items-center justify-center bg-white rounded-lg shadow-sm text-gray-600 active:scale-90 transition-transform hover:text-red-500">
+                        <Button
+                            variant="outline"
+                            iconOnly
+                            size="xs"
+                            rounded="md"
+                            className="bg-white hover:text-red-500"
+                        >
                             <Minus size={14} strokeWidth={3} />
-                        </button>
+                        </Button>
                         <span className="text-sm font-bold w-4 text-center">{item.qty}</span>
-                        <button className="w-7 h-7 flex items-center justify-center bg-white rounded-lg shadow-sm text-gray-600 active:scale-90 transition-transform hover:text-green-600">
+                        <Button
+                            variant="outline"
+                            iconOnly
+                            size="xs"
+                            rounded="md"
+                            className="bg-white hover:text-green-600"
+                        >
                             <Plus size={14} strokeWidth={3} />
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>
