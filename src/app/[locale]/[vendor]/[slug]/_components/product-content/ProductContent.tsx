@@ -75,7 +75,7 @@ const ProductContent = ({ product }: ProductContentProps) => {
         )}
 
         {extras.length > 0 && (
-          <div className="mt-6 grid gap-3">
+          <div className="mt-6 grid gap-3 pb-30">
             <span className="uppercase text-sm font-medium text-gray-500">Add Extras</span>
             {extras.map((extra) => (
               <CheckboxOption
