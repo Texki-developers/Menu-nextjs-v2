@@ -7,6 +7,41 @@
     "offers": "অফার",
     "cart": "কার্ট",
     "account": "অ্যাকাউন্ট"
+  },
+  "auth": {
+    "login": {
+      "title": "লগইন",
+      "description": "চালিয়ে যেতে আপনার ফোন নম্বর লিখুন",
+      "buttonText": "চালিয়ে যান"
+    },
+    "signup": {
+      "title": "সাইন আপ",
+      "description": "শুরু করতে আপনার অ্যাকাউন্ট তৈরি করুন",
+      "buttonText": "সাইন আপ"
+    },
+    "otp": {
+      "title": "OTP যাচাই করুন",
+      "description": "আপনার ফোনে পাঠানো যাচাইকরণ কোড লিখুন",
+      "buttonText": "যাচাই করুন"
+    },
+    "phoneNumber": {
+      "label": "ফোন নম্বর",
+      "placeholder": "আপনার ফোন নম্বর লিখুন"
+    },
+    "name": {
+      "label": "পূর্ণ নাম",
+      "placeholder": "আপনার পূর্ণ নাম লিখুন"
+    },
+    "errors": {
+      "invalidPhoneNumber": "অনুগ্রহ করে একটি বৈধ ফোন নম্বর লিখুন",
+      "invalidOtp": "অনুগ্রহ করে একটি বৈধ OTP লিখুন",
+      "incorrectOtp": "আপনি যে OTP লিখেছেন তা ভুল। অনুগ্রহ করে আবার চেষ্টা করুন।",
+      "invalidName": "অনুগ্রহ করে আপনার পূর্ণ নাম লিখুন"
+    },
+    "resend_in_seconds": "পুনরায় পাঠান",
+    "seconds": "সেকেন্ড",
+    "didnt_receive_code": "কোড পাননি?",
+    "sending": "পাঠানো হচ্ছে",
+    "resend_otp": "OTP পুনরায় পাঠান"
   }
 }
-

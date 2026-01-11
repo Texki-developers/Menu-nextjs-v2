@@ -8,9 +8,11 @@ interface BottomSheetWrapperProps {
     children: React.ReactNode;
     show: boolean;
     onClose?: () => void;
+    className?: string;
+    containerClassName?: string;
 }
 
-const BottomSheetWrapper: React.FC<BottomSheetWrapperProps> = ({ children, show, onClose }) => {
+const BottomSheetWrapper: React.FC<BottomSheetWrapperProps> = ({ children, show, onClose, className, containerClassName }) => {
     useEffect(() => {
         if (typeof document === "undefined") return;
 
@@ -29,11 +31,16 @@ const BottomSheetWrapper: React.FC<BottomSheetWrapperProps> = ({ children, show,
         <>
             <div
                 onClick={() => onClose?.()}
-                className={cn("fixed top-0 container h-dvh w-screen left-1/2 -translate-x-1/2 z-9999 bg-black/50 backdrop-blur-md", !show ? "hidden" : "block")}></div>
+                className={cn(
+                    "fixed top-0 container h-dvh w-screen left-1/2 -translate-x-1/2 z-9999 bg-black/50 backdrop-blur-md",
+                    !show ? "hidden" : "block",
+                    containerClassName
+                )}></div>
             <div
                 className={cn(
-                    "fixed bottom-0 z-9999 left-1/2 -translate-x-1/2 container transition-transform duration-300 max-h-[90dvh] overflow-y-auto w-screen bg-popup border-t border-border rounded-t-4xl",
-                    show ? "translate-y-0" : "translate-y-full"
+                    "fixed bottom-0 z-99999 left-1/2 -translate-x-1/2 container transition-transform duration-300 max-h-[90dvh] overflow-y-auto w-screen bg-popup border-t border-border rounded-t-4xl",
+                    show ? "translate-y-0" : "translate-y-full",
+                    className
                 )}>
                 {children}
             </div>

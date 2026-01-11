@@ -21,7 +21,7 @@ const SearchInput = ({ inputProps, containerProps, icon }: SearchInputProps) => 
                 className="w-full px-4 py-3 border placeholder:text-lg placeholder:text-[#5a5a5a] rounded-2xl outline-none text-lg border-gray-300"
                 {...inputProps}
             />
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2">{icon || <Search />}</div>
+            <div className="absolute ltr:right-4 rtl:left-4 top-1/2 transform -translate-y-1/2">{icon || <Search />}</div>
         </div>
     );
 };

@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { BackButton } from "@/components/atoms/back-button";
-import { FavoriteButton } from "@/components/atoms/favorite-button";
 
 interface ProductMediaProps {
     images?: string[];
@@ -22,16 +20,6 @@ const ProductMedia = ({ images = [], alt = "Product image" }: ProductMediaProps)
                     className="object-cover"
                     priority
                 />
-
-                {/* Back Button */}
-                <div className="absolute top-4 left-4 z-10">
-                    <BackButton withBlur />
-                </div>
-
-                {/* Favorite Button */}
-                <div className="absolute top-4 right-4 z-10">
-                    <FavoriteButton />
-                </div>
             </div>
         </div>
     );

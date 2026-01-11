@@ -7,6 +7,41 @@
     "offers": "العروض",
     "cart": "السلة",
     "account": "الحساب"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "description": "أدخل رقم هاتفك للمتابعة",
+      "buttonText": "متابعة"
+    },
+    "signup": {
+      "title": "إنشاء حساب",
+      "description": "أنشئ حسابك للبدء",
+      "buttonText": "إنشاء حساب"
+    },
+    "otp": {
+      "title": "التحقق من رمز OTP",
+      "description": "أدخل رمز التحقق المرسل إلى هاتفك",
+      "buttonText": "تحقق"
+    },
+    "phoneNumber": {
+      "label": "رقم الهاتف",
+      "placeholder": "أدخل رقم هاتفك"
+    },
+    "name": {
+      "label": "الاسم الكامل",
+      "placeholder": "أدخل اسمك الكامل"
+    },
+    "errors": {
+      "invalidPhoneNumber": "يرجى إدخال رقم هاتف صحيح",
+      "invalidOtp": "يرجى إدخال رمز OTP صحيح",
+      "incorrectOtp": "رمز OTP الذي أدخلته غير صحيح. يرجى المحاولة مرة أخرى.",
+      "invalidName": "يرجى إدخال اسمك الكامل"
+    },
+    "resend_in_seconds": "إعادة إرسال الرمز خلال",
+    "seconds": "ثانية",
+    "didnt_receive_code": "لم تستلم الرمز؟",
+    "sending": "جاري الإرسال",
+    "resend_otp": "إعادة إرسال رمز OTP"
   }
 }
-

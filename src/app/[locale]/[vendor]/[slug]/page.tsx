@@ -1,6 +1,7 @@
 import ProductMedia from "./_components/product-media/ProductMedia";
 import ProductContent from "./_components/product-content/ProductContent";
 import ProductActions from "./_components/product-actions/ProductActions";
+import ProductButtons from "./_components/product-buttons/ProductButtons";
 import { getProductBySlug } from "./_utils/get-product-by-slug";
 
 interface PageProps {
@@ -22,6 +23,7 @@ const page = async ({ params }: PageProps) => {
     return (
         <div className="bg-gray-100 w-full h-dvh">
             <ProductMedia images={product.images || [product.image]} alt={product.title} />
+            <ProductButtons />
             <ProductContent product={product} />
             <ProductActions price={product.price} />
         </div>

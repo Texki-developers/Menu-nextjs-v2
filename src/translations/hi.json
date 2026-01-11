@@ -7,6 +7,42 @@
     "offers": "ऑफ़र्स",
     "cart": "कार्ट",
     "account": "खाता"
+  },
+  "auth": {
+    "login": {
+      "title": "लॉग इन",
+      "description": "जारी रखने के लिए अपना फोन नंबर दर्ज करें",
+      "buttonText": "जारी रखें"
+    },
+    "signup": {
+      "title": "साइन अप",
+      "description": "शुरू करने के लिए अपना खाता बनाएं",
+      "buttonText": "साइन अप"
+    },
+    "otp": {
+      "title": "OTP सत्यापित करें",
+      "description": "अपने फोन पर भेजा गया सत्यापन कोड दर्ज करें",
+      "buttonText": "सत्यापित करें"
+    },
+    "phoneNumber": {
+      "label": "फोन नंबर",
+      "placeholder": "अपना फोन नंबर दर्ज करें"
+    },
+    "name": {
+      "label": "पूरा नाम",
+      "placeholder": "अपना पूरा नाम दर्ज करें"
+    },
+    "errors": {
+      "invalidPhoneNumber": "कृपया एक वैध फोन नंबर दर्ज करें",
+      "invalidOtp": "कृपया एक वैध OTP दर्ज करें",
+      "incorrectOtp": "आपके द्वारा दर्ज किया गया OTP गलत है। कृपया पुनः प्रयास करें।",
+      "invalidName": "कृपया अपना पूरा नाम दर्ज करें"
+    },
+    "resend_in_seconds": "सेकंड में पुनः भेजें",
+    "seconds": "सेकंड",
+    "didnt_receive_code": "कोड प्राप्त नहीं हुआ?",
+    "sending": "भेजा जा रहा है",
+    "resend_otp": "OTP पुनः भेजें"
   }
 }
 

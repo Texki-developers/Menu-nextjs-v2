@@ -7,6 +7,42 @@
     "offers": "پیشنهادها",
     "cart": "سبد خرید",
     "account": "حساب کاربری"
+  },
+  "auth": {
+    "login": {
+      "title": "ورود",
+      "description": "برای ادامه شماره تلفن خود را وارد کنید",
+      "buttonText": "ادامه"
+    },
+    "signup": {
+      "title": "ثبت نام",
+      "description": "برای شروع حساب کاربری خود را ایجاد کنید",
+      "buttonText": "ثبت نام"
+    },
+    "otp": {
+      "title": "تایید OTP",
+      "description": "کد تایید ارسال شده به تلفن خود را وارد کنید",
+      "buttonText": "تایید"
+    },
+    "phoneNumber": {
+      "label": "شماره تلفن",
+      "placeholder": "شماره تلفن خود را وارد کنید"
+    },
+    "name": {
+      "label": "نام کامل",
+      "placeholder": "نام کامل خود را وارد کنید"
+    },
+    "errors": {
+      "invalidPhoneNumber": "لطفاً یک شماره تلفن معتبر وارد کنید",
+      "invalidOtp": "لطفاً یک OTP معتبر وارد کنید",
+      "incorrectOtp": "کد OTP وارد شده اشتباه است. لطفاً دوباره تلاش کنید.",
+      "invalidName": "لطفاً نام کامل خود را وارد کنید"
+    },
+    "resend_in_seconds": "ارسال مجدد کد در",
+    "seconds": "ثانیه",
+    "didnt_receive_code": "کد را دریافت نکردید؟",
+    "sending": "در حال ارسال",
+    "resend_otp": "ارسال مجدد OTP"
   }
 }
 
