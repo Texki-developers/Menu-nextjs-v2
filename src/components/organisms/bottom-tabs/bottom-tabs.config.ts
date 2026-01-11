@@ -17,7 +17,7 @@ interface BottomTabClickProps {
 
 export interface BottomTabConfig {
   id: BottomTabId;
-  name: string;
+  nameKey: string;
   icon: FC<SVGProps<SVGSVGElement>>;
   url?: string;
   onClick?: (props: BottomTabClickProps) => void;
@@ -26,31 +26,31 @@ export interface BottomTabConfig {
 export const bottomTabsConfig: BottomTabConfig[] = [
   {
     id: BottomTabId.HOME,
-    name: "Home",
+    nameKey: "BottomTabs.home",
     icon: HomeIcon,
     url: ROUTES.HOME,
   },
   {
     id: BottomTabId.OFFERS,
-    name: "Offers",
+    nameKey: "BottomTabs.offers",
     icon: OffersIcon,
     url: ROUTES.OFFERS,
   },
   {
     id: BottomTabId.CART,
-    name: "Cart",
+    nameKey: "BottomTabs.cart",
     icon: CartIcon,
     url: ROUTES.CART,
   },
   {
     id: BottomTabId.ACCOUNT,
-    name: "Account",
+    nameKey: "BottomTabs.account",
     icon: AccountIcon,
     url: ROUTES.ACCOUNT,
   },
   {
     id: BottomTabId.LANGUAGE,
-    name: "Language",
+    nameKey: "BottomTabs.language",
     icon: Languages,
     onClick: ({ togglePopupStore }: BottomTabClickProps) => {
       togglePopupStore?.();

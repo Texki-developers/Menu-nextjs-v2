@@ -6,7 +6,8 @@
     "home": "ഹോം",
     "offers": "ഓഫറുകൾ",
     "cart": "കാർട്ട്",
-    "account": "അക്കൗണ്ട്"
+    "account": "അക്കൗണ്ട്",
+    "language": "ഭാഷ"
   },
   "auth": {
     "login": {
@@ -43,6 +44,56 @@
     "didnt_receive_code": "കോഡ് ലഭിച്ചില്ലേ?",
     "sending": "അയയ്ക്കുന്നു",
     "resend_otp": "OTP വീണ്ടും അയയ്ക്കുക"
+  },
+  "cart": {
+    "title": "കാർട്ട്",
+    "clear": "മായ്ക്കുക",
+    "empty": "നിങ്ങളുടെ കാർട്ട് ശൂന്യമാണ്",
+    "subtotal": "ഉപമൊത്തം",
+    "deliveryFee": "ഡെലിവറി ഫീസ്",
+    "discount": "കിഴിവ്",
+    "grandTotal": "മൊത്തം തുക",
+    "completeYourMeal": "നിങ്ങളുടെ ഭക്ഷണം പൂർത്തിയാക്കുക",
+    "trending": "ട്രെൻഡിംഗ്"
+  },
+  "account": {
+    "myProfile": "എന്റെ പ്രൊഫൈൽ",
+    "goldMember": "ഗോൾഡ് അംഗം",
+    "platinumStatus": "പ്ലാറ്റിനം സ്റ്റാറ്റസ്",
+    "points": "പോയിന്റുകൾ",
+    "ptsToPlatinum": "പോയിന്റുകൾ പ്ലാറ്റിനം സ്റ്റാറ്റസിലേക്ക്",
+    "recentOrders": "സമീപകാല ഓർഡറുകൾ",
+    "viewAll": "എല്ലാം കാണുക",
+    "reorder": "വീണ്ടും ഓർഡർ",
+    "savedItems": "സംരക്ഷിച്ച ഇനങ്ങൾ",
+    "helpSupport": "സഹായവും പിന്തുണയും",
+    "logOut": "ലോഗ് ഔട്ട്",
+    "delivered": "ഡെലിവർ ചെയ്തു"
+  },
+  "offers": {
+    "exclusiveOffers": "പ്രത്യേക ഓഫറുകൾ",
+    "flashSaleEndsIn": "ഫ്ലാഷ് സെയിൽ അവസാനിക്കുന്നു",
+    "todaysTopPicks": "ഇന്നത്തെ മികച്ച തിരഞ്ഞെടുപ്പുകൾ",
+    "aiPick": "AI തിരഞ്ഞെടുപ്പ്",
+    "addToOrder": "ഓർഡറിലേക്ക് ചേർക്കുക"
+  },
+  "product": {
+    "notFound": "ഉൽപ്പന്നം കണ്ടെത്തിയില്ല",
+    "chooseSize": "വലുപ്പം തിരഞ്ഞെടുക്കുക",
+    "addExtras": "എക്സ്ട്രകൾ ചേർക്കുക",
+    "reviews": "അവലോകനങ്ങൾ",
+    "verifiedReviews": "സ്ഥിരീകരിച്ച അവലോകനങ്ങൾ",
+    "new": "പുതിയത്",
+    "seeAll": "എല്ലാം കാണുക",
+    "helpful": "സഹായകരമാണ്"
+  },
+  "common": {
+    "search": "തിരയുക",
+    "goBack": "തിരികെ പോകുക",
+    "addToFavorites": "പ്രിയങ്കരങ്ങളിലേക്ക് ചേർക്കുക",
+    "removeFromFavorites": "പ്രിയങ്കരങ്ങളിൽ നിന്ന് നീക്കം ചെയ്യുക",
+    "decreaseQuantity": "അളവ് കുറയ്ക്കുക",
+    "increaseQuantity": "അളവ് വർദ്ധിപ്പിക്കുക"
   }
 }
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Heart } from "lucide-react";
 import { Button } from "@/components/atoms/button";
 import { ButtonHTMLAttributes } from "react";
@@ -12,6 +13,7 @@ interface FavoriteButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 const FavoriteButton = ({ isFavorite: controlledIsFavorite, onToggle, className, ...props }: FavoriteButtonProps) => {
+    const t = useTranslations("common");
     const [internalIsFavorite, setInternalIsFavorite] = useState(false);
 
     // Use controlled state if provided, otherwise use internal state
@@ -35,7 +37,7 @@ const FavoriteButton = ({ isFavorite: controlledIsFavorite, onToggle, className,
             size="base"
             rounded="full"
             className={`bg-black/80 backdrop-blur-md text-white hover:bg-white hover:text-red-500 shadow-sm ${className || ""}`}
-            aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+            aria-label={isFavorite ? t("removeFromFavorites") : t("addToFavorites")}
             {...props}>
             <Heart
                 size={20}

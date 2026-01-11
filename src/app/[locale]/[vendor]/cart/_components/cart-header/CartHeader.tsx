@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowLeft } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/atoms/button";
@@ -14,6 +15,7 @@ const CartHeader = ({
     tableNumber = "Table 12",
     deliveryTime = "Ready in 15-20 mins",
 }: CartHeaderProps) => {
+    const t = useTranslations();
     const router = useRouter();
     const { vendor }: { vendor: string } = useParams();
 
@@ -41,10 +43,10 @@ const CartHeader = ({
                     >
                         <ArrowLeft size={20} className="text-gray-900" />
                     </Button>
-                    <h2 className="text-lg font-bold text-gray-900">Cart</h2>
+                    <h2 className="text-lg font-bold text-gray-900">{t("cart.title")}</h2>
                 </div>
                 <Button variant="text-destructive" size="sm" rounded="md">
-                    Clear
+                    {t("cart.clear")}
                 </Button>
             </div>
 

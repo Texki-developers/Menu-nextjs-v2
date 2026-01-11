@@ -6,7 +6,8 @@
     "home": "வீடு",
     "offers": "சலுகைகள்",
     "cart": "கார்ட்",
-    "account": "கணக்கு"
+    "account": "கணக்கு",
+    "language": "மொழி"
   },
   "auth": {
     "login": {
@@ -43,6 +44,56 @@
     "didnt_receive_code": "குறியீடு கிடைக்கவில்லையா?",
     "sending": "அனுப்புகிறது",
     "resend_otp": "OTP மீண்டும் அனுப்பவும்"
+  },
+  "cart": {
+    "title": "கார்ட்",
+    "clear": "அழிக்க",
+    "empty": "உங்கள் கார்ட் காலியாக உள்ளது",
+    "subtotal": "உபமொத்தம்",
+    "deliveryFee": "டெலிவரி கட்டணம்",
+    "discount": "தள்ளுபடி",
+    "grandTotal": "மொத்த தொகை",
+    "completeYourMeal": "உங்கள் உணவை முடிக்கவும்",
+    "trending": "பிரபலமான"
+  },
+  "account": {
+    "myProfile": "எனது சுயவிவரம்",
+    "goldMember": "தங்க உறுப்பினர்",
+    "platinumStatus": "பிளாட்டினம் நிலை",
+    "points": "புள்ளிகள்",
+    "ptsToPlatinum": "புள்ளிகள் பிளாட்டினம் நிலைக்கு",
+    "recentOrders": "சமீபத்திய ஆர்டர்கள்",
+    "viewAll": "அனைத்தையும் பார்க்க",
+    "reorder": "மீண்டும் ஆர்டர்",
+    "savedItems": "சேமிக்கப்பட்ட உருப்படிகள்",
+    "helpSupport": "உதவி மற்றும் ஆதரவு",
+    "logOut": "வெளியேற",
+    "delivered": "வழங்கப்பட்டது"
+  },
+  "offers": {
+    "exclusiveOffers": "பிரத்தியேக சலுகைகள்",
+    "flashSaleEndsIn": "ஃபிளாஷ் விற்பனை முடிகிறது",
+    "todaysTopPicks": "இன்றைய சிறந்த தேர்வுகள்",
+    "aiPick": "AI தேர்வு",
+    "addToOrder": "ஆர்டரில் சேர்க்க"
+  },
+  "product": {
+    "notFound": "தயாரிப்பு கிடைக்கவில்லை",
+    "chooseSize": "அளவைத் தேர்ந்தெடுக்கவும்",
+    "addExtras": "கூடுதல் சேர்க்க",
+    "reviews": "மதிப்புரைகள்",
+    "verifiedReviews": "சரிபார்க்கப்பட்ட மதிப்புரைகள்",
+    "new": "புதியது",
+    "seeAll": "அனைத்தையும் பார்க்க",
+    "helpful": "பயனுள்ள"
+  },
+  "common": {
+    "search": "தேடு",
+    "goBack": "திரும்பிச் செல்",
+    "addToFavorites": "பிடித்தவைகளில் சேர்க்க",
+    "removeFromFavorites": "பிடித்தவைகளிலிருந்து நீக்க",
+    "decreaseQuantity": "அளவைக் குறைக்க",
+    "increaseQuantity": "அளவை அதிகரிக்க"
   }
 }
 

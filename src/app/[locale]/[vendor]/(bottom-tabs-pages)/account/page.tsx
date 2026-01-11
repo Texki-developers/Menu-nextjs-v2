@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import {
     Bell,
@@ -42,12 +43,14 @@ const PAST_ORDERS_MOCK = [
 ];
 
 const AccountScreen = () => {
+    const t = useTranslations("account");
+
     return (
         <div className="pb-6 animate-in fade-in slide-in-from-right-8 duration-300 bg-gray-50 min-h-screen">
             {/* Profile Header */}
             <div className="bg-white pb-6 pt-12 px-6 rounded-b-3xl shadow-sm mb-6">
                 <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-bold text-gray-900">My Profile</h2>
+                    <h2 className="text-2xl font-bold text-gray-900">{t("myProfile")}</h2>
                     <Button variant="ghost" iconOnly size="base" rounded="full" className="bg-gray-50">
                         <Bell size={20} />
                     </Button>
@@ -68,8 +71,8 @@ const AccountScreen = () => {
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl -mr-10 -mt-10"></div>
                     <div className="flex justify-between items-start mb-4">
                         <div>
-                            <span className="text-xs font-bold text-yellow-400 uppercase tracking-wider mb-1 block">Gold Member</span>
-                            <h4 className="text-2xl font-bold">1,240 Pts</h4>
+                            <span className="text-xs font-bold text-yellow-400 uppercase tracking-wider mb-1 block">{t("goldMember")}</span>
+                            <h4 className="text-2xl font-bold">1,240 {t("points")}</h4>
                         </div>
                         <div className="bg-white/10 p-2 rounded-lg backdrop-blur-sm">
                             <Star size={20} fill="currentColor" className="text-yellow-400" />
@@ -79,16 +82,16 @@ const AccountScreen = () => {
                     <div className="w-full bg-white/20 h-1.5 rounded-full mb-2">
                         <div className="bg-yellow-400 h-1.5 rounded-full w-[70%] shadow-[0_0_10px_rgba(250,204,21,0.5)]"></div>
                     </div>
-                    <p className="text-[10px] text-gray-400">760 pts to Platinum Status</p>
+                    <p className="text-[10px] text-gray-400">760 {t("ptsToPlatinum")}</p>
                 </div>
             </div>
 
             {/* Recent Orders Section */}
             <div className="px-5 mb-6">
                 <div className="flex justify-between items-center mb-4">
-                    <h3 className="font-bold text-gray-900">Recent Orders</h3>
+                    <h3 className="font-bold text-gray-900">{t("recentOrders")}</h3>
                     <Button variant="text-primary" size="xs">
-                        View All
+                        {t("viewAll")}
                     </Button>
                 </div>
 
@@ -101,7 +104,7 @@ const AccountScreen = () => {
                             <div className="flex-1">
                                 <div className="flex justify-between items-start mb-1">
                                     <h4 className="font-bold text-gray-800 text-sm line-clamp-1">{order.items}</h4>
-                                    <span className="text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-md">{order.status}</span>
+                                    <span className="text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-md">{t("delivered")}</span>
                                 </div>
                                 <p className="text-xs text-gray-500 mb-3">{order.date} • AED {order.total}</p>
 
@@ -111,7 +114,7 @@ const AccountScreen = () => {
                                     fullWidth
                                     leftIcon={<RotateCcw size={12} />}
                                 >
-                                    Reorder
+                                    {t("reorder")}
                                 </Button>
                             </div>
                         </div>
@@ -122,9 +125,9 @@ const AccountScreen = () => {
             {/* Menu List */}
             <div className="px-5 space-y-2">
                 {[
-                    { icon: Heart, label: "Saved Items" },
-                    { icon: HelpCircle, label: "Help & Support" },
-                    { icon: LogOut, label: "Log Out", variant: "text-destructive" as const },
+                    { icon: Heart, label: t("savedItems") },
+                    { icon: HelpCircle, label: t("helpSupport") },
+                    { icon: LogOut, label: t("logOut"), variant: "text-destructive" as const },
                 ].map((item, idx) => (
                     <Button
                         key={idx}

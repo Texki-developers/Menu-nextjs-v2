@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Sparkles, Tag, Plus } from "lucide-react";
 import Price from "@/components/organisms/price/Price";
@@ -20,6 +23,8 @@ interface OfferCardProps {
 }
 
 const OfferCard = ({ item, isHighlighted, aiReason }: OfferCardProps) => {
+    const t = useTranslations("offers");
+
     return (
         <div
             className={`group relative mb-6 rounded-3xl bg-white shadow-lg shadow-gray-200/60 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}>
@@ -34,7 +39,7 @@ const OfferCard = ({ item, isHighlighted, aiReason }: OfferCardProps) => {
                             />
                         </div>
                         <div>
-                            <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-0.5">AI Pick</p>
+                            <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-0.5">{t("aiPick")}</p>
                             <p className="text-sm font-medium text-gray-800 leading-tight">{aiReason}</p>
                         </div>
                     </div>
@@ -94,7 +99,7 @@ const OfferCard = ({ item, isHighlighted, aiReason }: OfferCardProps) => {
                         leftIcon={<Plus size={18} strokeWidth={3} />}
                         className={`${item.btnColor} shadow-lg shadow-orange-200 hover:shadow-orange-300 hover:brightness-105`}
                     >
-                        Add to Order
+                        {t("addToOrder")}
                     </Button>
                 </div>
             </div>

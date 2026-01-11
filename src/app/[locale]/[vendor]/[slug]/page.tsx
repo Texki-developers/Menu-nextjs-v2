@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import ProductMedia from "./_components/product-media/ProductMedia";
 import ProductContent from "./_components/product-content/ProductContent";
 import ProductActions from "./_components/product-actions/ProductActions";
@@ -5,17 +6,18 @@ import ProductButtons from "./_components/product-buttons/ProductButtons";
 import { getProductBySlug } from "./_utils/get-product-by-slug";
 
 interface PageProps {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ slug: string; locale: string }>;
 }
 
 const page = async ({ params }: PageProps) => {
     const { slug } = await params;
+    const t = await getTranslations("product");
     const product = getProductBySlug(slug);
 
     if (!product) {
         return (
             <div className="bg-gray-100 w-full h-dvh flex items-center justify-center">
-                <p className="text-gray-500">Product not found</p>
+                <p className="text-gray-500">{t("notFound")}</p>
             </div>
         );
     }
