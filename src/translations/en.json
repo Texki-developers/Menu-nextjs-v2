@@ -6,7 +6,8 @@
     "home": "Home",
     "offers": "Offers",
     "cart": "Cart",
-    "account": "Account"
+    "account": "Account",
+    "language": "Language"
   },
   "auth": {
     "login": {
@@ -43,5 +44,55 @@
     "didnt_receive_code": "Didn't receive the code?",
     "sending": "Sending",
     "resend_otp": "Resend OTP"
+  },
+  "cart": {
+    "title": "Cart",
+    "clear": "Clear",
+    "empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Delivery Fee",
+    "discount": "Discount",
+    "grandTotal": "Grand Total",
+    "completeYourMeal": "Complete your meal",
+    "trending": "Trending"
+  },
+  "account": {
+    "myProfile": "My Profile",
+    "goldMember": "Gold Member",
+    "platinumStatus": "Platinum Status",
+    "points": "Pts",
+    "ptsToPlatinum": "pts to Platinum Status",
+    "recentOrders": "Recent Orders",
+    "viewAll": "View All",
+    "reorder": "Reorder",
+    "savedItems": "Saved Items",
+    "helpSupport": "Help & Support",
+    "logOut": "Log Out",
+    "delivered": "Delivered"
+  },
+  "offers": {
+    "exclusiveOffers": "Exclusive Offers",
+    "flashSaleEndsIn": "Flash Sale Ends In",
+    "todaysTopPicks": "Today's Top Picks",
+    "aiPick": "AI Pick",
+    "addToOrder": "Add to Order"
+  },
+  "product": {
+    "notFound": "Product not found",
+    "chooseSize": "Choose Size",
+    "addExtras": "Add Extras",
+    "reviews": "reviews",
+    "verifiedReviews": "Verified Reviews",
+    "new": "New",
+    "seeAll": "See All",
+    "helpful": "Helpful"
+  },
+  "common": {
+    "search": "Search",
+    "goBack": "Go back",
+    "addToFavorites": "Add to favorites",
+    "removeFromFavorites": "Remove from favorites",
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity"
   }
 }

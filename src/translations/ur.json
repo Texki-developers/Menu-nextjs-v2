@@ -6,7 +6,8 @@
     "home": "ہوم",
     "offers": "پیشکشیں",
     "cart": "کارٹ",
-    "account": "اکاؤنٹ"
+    "account": "اکاؤنٹ",
+    "language": "زبان"
   },
   "auth": {
     "login": {
@@ -43,6 +44,57 @@
     "didnt_receive_code": "کوڈ موصول نہیں ہوا؟",
     "sending": "بھیجا جا رہا ہے",
     "resend_otp": "OTP دوبارہ بھیجیں"
+  },
+  "cart": {
+    "title": "کارٹ",
+    "clear": "صاف کریں",
+    "empty": "آپ کا کارٹ خالی ہے",
+    "subtotal": "ذیلی کل",
+    "deliveryFee": "ڈیلیوری فیس",
+    "discount": "رعایت",
+    "grandTotal": "کل رقم",
+    "completeYourMeal": "اپنا کھانا مکمل کریں",
+    "trending": "مقبول"
+  },
+  "account": {
+    "myProfile": "میرا پروفائل",
+    "goldMember": "گولڈ ممبر",
+    "platinumStatus": "پلاٹینم کی حیثیت",
+    "points": "پوائنٹس",
+    "ptsToPlatinum": "پوائنٹس پلاٹینم کی حیثیت تک",
+    "recentOrders": "حالیہ آرڈرز",
+    "viewAll": "سب دیکھیں",
+    "reorder": "دوبارہ آرڈر",
+    "savedItems": "محفوظ شدہ آئٹمز",
+    "helpSupport": "مدد اور تعاون",
+    "logOut": "لاگ آؤٹ",
+    "delivered": "ڈیلیور ہو گیا"
+  },
+  "offers": {
+    "exclusiveOffers": "خصوصی پیشکشیں",
+    "flashSaleEndsIn": "فلیش سیل ختم ہو رہی ہے",
+    "todaysTopPicks": "آج کے بہترین انتخاب",
+    "aiPick": "AI انتخاب",
+    "addToOrder": "آرڈر میں شامل کریں"
+  },
+  "product": {
+    "notFound": "پروڈکٹ نہیں ملا",
+    "chooseSize": "سائز منتخب کریں",
+    "chooseSize": "سائز منتخب کریں",
+    "addExtras": "اضافی شامل کریں",
+    "reviews": "جائزے",
+    "verifiedReviews": "تصدیق شدہ جائزے",
+    "new": "نیا",
+    "seeAll": "سب دیکھیں",
+    "helpful": "مددگار"
+  },
+  "common": {
+    "search": "تلاش کریں",
+    "goBack": "واپس جائیں",
+    "addToFavorites": "پسندیدہ میں شامل کریں",
+    "removeFromFavorites": "پسندیدہ سے ہٹائیں",
+    "decreaseQuantity": "مقدار کم کریں",
+    "increaseQuantity": "مقدار بڑھائیں"
   }
 }
 

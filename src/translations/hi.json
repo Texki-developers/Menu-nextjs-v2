@@ -6,7 +6,8 @@
     "home": "होम",
     "offers": "ऑफ़र्स",
     "cart": "कार्ट",
-    "account": "खाता"
+    "account": "खाता",
+    "language": "भाषा"
   },
   "auth": {
     "login": {
@@ -43,6 +44,56 @@
     "didnt_receive_code": "कोड प्राप्त नहीं हुआ?",
     "sending": "भेजा जा रहा है",
     "resend_otp": "OTP पुनः भेजें"
+  },
+  "cart": {
+    "title": "कार्ट",
+    "clear": "साफ करें",
+    "empty": "आपकी कार्ट खाली है",
+    "subtotal": "उप-योग",
+    "deliveryFee": "डिलीवरी शुल्क",
+    "discount": "छूट",
+    "grandTotal": "कुल योग",
+    "completeYourMeal": "अपना भोजन पूरा करें",
+    "trending": "ट्रेंडिंग"
+  },
+  "account": {
+    "myProfile": "मेरी प्रोफ़ाइल",
+    "goldMember": "गोल्ड सदस्य",
+    "platinumStatus": "प्लैटिनम स्थिति",
+    "points": "अंक",
+    "ptsToPlatinum": "अंक प्लैटिनम स्थिति तक",
+    "recentOrders": "हाल के ऑर्डर",
+    "viewAll": "सभी देखें",
+    "reorder": "पुनः ऑर्डर",
+    "savedItems": "सहेजे गए आइटम",
+    "helpSupport": "सहायता और समर्थन",
+    "logOut": "लॉग आउट",
+    "delivered": "डिलीवर किया गया"
+  },
+  "offers": {
+    "exclusiveOffers": "विशेष ऑफर",
+    "flashSaleEndsIn": "फ्लैश सेल समाप्त हो रही है",
+    "todaysTopPicks": "आज के शीर्ष चयन",
+    "aiPick": "AI चयन",
+    "addToOrder": "ऑर्डर में जोड़ें"
+  },
+  "product": {
+    "notFound": "उत्पाद नहीं मिला",
+    "chooseSize": "आकार चुनें",
+    "addExtras": "एक्स्ट्रा जोड़ें",
+    "reviews": "समीक्षाएं",
+    "verifiedReviews": "सत्यापित समीक्षाएं",
+    "new": "नया",
+    "seeAll": "सभी देखें",
+    "helpful": "मददगार"
+  },
+  "common": {
+    "search": "खोजें",
+    "goBack": "वापस जाएं",
+    "addToFavorites": "पसंदीदा में जोड़ें",
+    "removeFromFavorites": "पसंदीदा से हटाएं",
+    "decreaseQuantity": "मात्रा कम करें",
+    "increaseQuantity": "मात्रा बढ़ाएं"
   }
 }
 

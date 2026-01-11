@@ -6,7 +6,8 @@
     "home": "الرئيسية",
     "offers": "العروض",
     "cart": "السلة",
-    "account": "الحساب"
+    "account": "الحساب",
+    "language": "اللغة"
   },
   "auth": {
     "login": {
@@ -43,5 +44,55 @@
     "didnt_receive_code": "لم تستلم الرمز؟",
     "sending": "جاري الإرسال",
     "resend_otp": "إعادة إرسال رمز OTP"
+  },
+  "cart": {
+    "title": "السلة",
+    "clear": "مسح",
+    "empty": "سلة التسوق فارغة",
+    "subtotal": "المجموع الفرعي",
+    "deliveryFee": "رسوم التوصيل",
+    "discount": "الخصم",
+    "grandTotal": "المجموع الكلي",
+    "completeYourMeal": "أكمل وجبتك",
+    "trending": "رائج"
+  },
+  "account": {
+    "myProfile": "ملفي الشخصي",
+    "goldMember": "عضو ذهبي",
+    "platinumStatus": "حالة البلاتين",
+    "points": "نقطة",
+    "ptsToPlatinum": "نقطة إلى حالة البلاتين",
+    "recentOrders": "الطلبات الأخيرة",
+    "viewAll": "عرض الكل",
+    "reorder": "إعادة الطلب",
+    "savedItems": "العناصر المحفوظة",
+    "helpSupport": "المساعدة والدعم",
+    "logOut": "تسجيل الخروج",
+    "delivered": "تم التسليم"
+  },
+  "offers": {
+    "exclusiveOffers": "عروض حصرية",
+    "flashSaleEndsIn": "ينتهي البيع السريع في",
+    "todaysTopPicks": "أفضل الاختيارات اليوم",
+    "aiPick": "اختيار الذكاء الاصطناعي",
+    "addToOrder": "أضف إلى الطلب"
+  },
+  "product": {
+    "notFound": "المنتج غير موجود",
+    "chooseSize": "اختر الحجم",
+    "addExtras": "أضف إضافات",
+    "reviews": "تقييم",
+    "verifiedReviews": "تقييمات موثقة",
+    "new": "جديد",
+    "seeAll": "عرض الكل",
+    "helpful": "مفيد"
+  },
+  "common": {
+    "search": "بحث",
+    "goBack": "العودة",
+    "addToFavorites": "إضافة إلى المفضلة",
+    "removeFromFavorites": "إزالة من المفضلة",
+    "decreaseQuantity": "تقليل الكمية",
+    "increaseQuantity": "زيادة الكمية"
   }
 }

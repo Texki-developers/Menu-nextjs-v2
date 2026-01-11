@@ -2,6 +2,7 @@
 
 import React, { useEffect, useMemo } from "react";
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { BottomTabConfig } from "@/components/organisms/bottom-tabs/bottom-tabs.config";
 import { useBottomTabsStore } from "@/store/bottom-tabs/bottom-tabs.store";
 import { cn } from "@/utils/classnames";
@@ -13,6 +14,7 @@ interface BottomTabsIconsProps {
 }
 
 const BottomTabsIcons: React.FC<BottomTabsIconsProps> = ({ tab }) => {
+  const t = useTranslations();
   const { setActiveTab } = useBottomTabsStore();
   const { togglePopup } = useLanguageStore();
   const pathname = usePathname();
@@ -54,7 +56,7 @@ const BottomTabsIcons: React.FC<BottomTabsIconsProps> = ({ tab }) => {
       onClick={handleClick}
       className="flex flex-col gap-[6px] items-center justify-center">
       <Icon className={cn("w-6 h-6", isActive ? "text-primary" : "text-gray-500")} />
-      <span className={cn("text-sm font-medium", isActive ? "text-primary" : "text-gray-500")}>{tab.name}</span>
+      <span className={cn("text-sm font-medium", isActive ? "text-primary" : "text-gray-500")}>{t(tab.nameKey)}</span>
     </div>
   );
 };

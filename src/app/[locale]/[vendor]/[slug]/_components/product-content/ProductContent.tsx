@@ -1,17 +1,20 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Price from "@/components/organisms/price/Price";
 import { Clock, Star } from "lucide-react";
 import { RadioOption } from "@/components/atoms/radio-option";
 import { CheckboxOption } from "@/components/atoms/checkbox-option";
 import { useProductOptionsStore } from "@/store/product-options/product-options.store";
 import { ProductConfig } from "@/app/[locale]/[vendor]/(bottom-tabs-pages)/_listing/_components/products/products.config";
+import ProductReviews from "../product-reviews/ProductReviews";
 
 interface ProductContentProps {
   product: ProductConfig;
 }
 
 const ProductContent = ({ product }: ProductContentProps) => {
+  const t = useTranslations();
   const { selectedSize, selectedExtras, setSelectedSize, toggleExtra } = useProductOptionsStore();
 
   const sizes = product.sizes || [];
@@ -32,7 +35,7 @@ const ProductContent = ({ product }: ProductContentProps) => {
                       size={14}
                       fill="currentColor"
                     />
-                    <span className="text-xs font-bold">{product.rating} (120+ reviews)</span>
+                    <span className="text-xs font-bold">{product.rating} (120+ {t("product.reviews")})</span>
                   </div>
                   {product.deliveryTime && <span className="text-gray-300">•</span>}
                 </>
@@ -56,7 +59,7 @@ const ProductContent = ({ product }: ProductContentProps) => {
         )}
         {sizes.length > 0 && (
           <div className="mt-6 grid gap-3">
-            <span className="uppercase text-sm font-medium text-gray-500">Choose Size</span>
+            <span className="uppercase text-sm font-medium text-gray-500">{t("product.chooseSize")}</span>
             {sizes.map((size) => (
               <RadioOption
                 key={size.id}
@@ -75,8 +78,8 @@ const ProductContent = ({ product }: ProductContentProps) => {
         )}
 
         {extras.length > 0 && (
-          <div className="mt-6 grid gap-3 pb-30">
-            <span className="uppercase text-sm font-medium text-gray-500">Add Extras</span>
+          <div className="mt-6 grid gap-3">
+            <span className="uppercase text-sm font-medium text-gray-500">{t("product.addExtras")}</span>
             {extras.map((extra) => (
               <CheckboxOption
                 key={extra.id}
@@ -96,6 +99,9 @@ const ProductContent = ({ product }: ProductContentProps) => {
             ))}
           </div>
         )}
+
+        {/* Reviews Section */}
+        <ProductReviews />
       </div>
     </div>
   );

@@ -6,7 +6,8 @@
     "home": "Home",
     "offers": "Mga Alok",
     "cart": "Cart",
-    "account": "Account"
+    "account": "Account",
+    "language": "Wika"
   },
   "auth": {
     "login": {
@@ -43,5 +44,55 @@
     "didnt_receive_code": "Hindi natanggap ang code?",
     "sending": "Nagpapadala",
     "resend_otp": "Ipadala muli ang OTP"
+  },
+  "cart": {
+    "title": "Cart",
+    "clear": "Linisin",
+    "empty": "Ang iyong cart ay walang laman",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Bayad sa Pagpapadala",
+    "discount": "Diskwento",
+    "grandTotal": "Kabuuang Halaga",
+    "completeYourMeal": "Kumpletuhin ang iyong pagkain",
+    "trending": "Sikat"
+  },
+  "account": {
+    "myProfile": "Aking Profile",
+    "goldMember": "Gold Member",
+    "platinumStatus": "Platinum Status",
+    "points": "Pts",
+    "ptsToPlatinum": "pts sa Platinum Status",
+    "recentOrders": "Mga Kamakailang Order",
+    "viewAll": "Tingnan Lahat",
+    "reorder": "Mag-order Muli",
+    "savedItems": "Mga Naka-save na Item",
+    "helpSupport": "Tulong at Suporta",
+    "logOut": "Mag-log Out",
+    "delivered": "Na-deliver"
+  },
+  "offers": {
+    "exclusiveOffers": "Eksklusibong Alok",
+    "flashSaleEndsIn": "Nagtatapos ang Flash Sale sa",
+    "todaysTopPicks": "Mga Nangungunang Pili Ngayon",
+    "aiPick": "AI Pick",
+    "addToOrder": "Idagdag sa Order"
+  },
+  "product": {
+    "notFound": "Hindi nahanap ang produkto",
+    "chooseSize": "Pumili ng Laki",
+    "addExtras": "Magdagdag ng Extras",
+    "reviews": "mga review",
+    "verifiedReviews": "Napatunayang Review",
+    "new": "Bago",
+    "seeAll": "Tingnan Lahat",
+    "helpful": "Nakatulong"
+  },
+  "common": {
+    "search": "Maghanap",
+    "goBack": "Bumalik",
+    "addToFavorites": "Idagdag sa mga paborito",
+    "removeFromFavorites": "Alisin sa mga paborito",
+    "decreaseQuantity": "Bawasan ang dami",
+    "increaseQuantity": "Dagdagan ang dami"
   }
 }

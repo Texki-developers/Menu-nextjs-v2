@@ -6,7 +6,8 @@
     "home": "خانه",
     "offers": "پیشنهادها",
     "cart": "سبد خرید",
-    "account": "حساب کاربری"
+    "account": "حساب کاربری",
+    "language": "زبان"
   },
   "auth": {
     "login": {
@@ -43,6 +44,56 @@
     "didnt_receive_code": "کد را دریافت نکردید؟",
     "sending": "در حال ارسال",
     "resend_otp": "ارسال مجدد OTP"
+  },
+  "cart": {
+    "title": "سبد خرید",
+    "clear": "پاک کردن",
+    "empty": "سبد خرید شما خالی است",
+    "subtotal": "جمع جزء",
+    "deliveryFee": "هزینه ارسال",
+    "discount": "تخفیف",
+    "grandTotal": "جمع کل",
+    "completeYourMeal": "غذای خود را کامل کنید",
+    "trending": "محبوب"
+  },
+  "account": {
+    "myProfile": "پروفایل من",
+    "goldMember": "عضو طلایی",
+    "platinumStatus": "وضعیت پلاتین",
+    "points": "امتیاز",
+    "ptsToPlatinum": "امتیاز تا وضعیت پلاتین",
+    "recentOrders": "سفارشات اخیر",
+    "viewAll": "مشاهده همه",
+    "reorder": "سفارش مجدد",
+    "savedItems": "آیتم‌های ذخیره شده",
+    "helpSupport": "راهنما و پشتیبانی",
+    "logOut": "خروج",
+    "delivered": "تحویل داده شد"
+  },
+  "offers": {
+    "exclusiveOffers": "پیشنهادات انحصاری",
+    "flashSaleEndsIn": "فروش فلش در",
+    "todaysTopPicks": "انتخاب‌های برتر امروز",
+    "aiPick": "انتخاب هوش مصنوعی",
+    "addToOrder": "افزودن به سفارش"
+  },
+  "product": {
+    "notFound": "محصول یافت نشد",
+    "chooseSize": "انتخاب اندازه",
+    "addExtras": "افزودن اضافات",
+    "reviews": "نظرات",
+    "verifiedReviews": "نظرات تأیید شده",
+    "new": "جدید",
+    "seeAll": "مشاهده همه",
+    "helpful": "مفید"
+  },
+  "common": {
+    "search": "جستجو",
+    "goBack": "بازگشت",
+    "addToFavorites": "افزودن به علاقه‌مندی‌ها",
+    "removeFromFavorites": "حذف از علاقه‌مندی‌ها",
+    "decreaseQuantity": "کاهش تعداد",
+    "increaseQuantity": "افزایش تعداد"
   }
 }
 

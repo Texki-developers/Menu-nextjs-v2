@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowLeft } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/atoms/button";
@@ -14,6 +15,7 @@ interface BackButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 
 }
 
 const BackButton = ({ fallbackUrl, className, withBlur = false, ...props }: BackButtonProps) => {
+    const t = useTranslations("common");
     const router = useRouter();
     const params = useParams();
     const vendor = params?.vendor as string | undefined;
@@ -36,7 +38,7 @@ const BackButton = ({ fallbackUrl, className, withBlur = false, ...props }: Back
             iconOnly
             size="base"
             rounded="full"
-            aria-label="Go back"
+            aria-label={t("goBack")}
             className={cn(
                 withBlur && "group bg-black/80 backdrop-blur-md text-white hover:bg-white hover:text-black shadow-sm",
                 className

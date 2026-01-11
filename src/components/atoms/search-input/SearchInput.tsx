@@ -1,4 +1,7 @@
+"use client";
+
 import { Search } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -11,13 +14,15 @@ interface SearchInputProps {
 }
 
 const SearchInput = ({ inputProps, containerProps, icon }: SearchInputProps) => {
+    const t = useTranslations("common");
+
     return (
         <div
             className="w-full relative bg-white rounded-2xl"
             {...containerProps}>
             <input
                 type="text"
-                placeholder="Search"
+                placeholder={t("search")}
                 className="w-full px-4 py-3 border placeholder:text-lg placeholder:text-[#5a5a5a] rounded-2xl outline-none text-lg border-gray-300"
                 {...inputProps}
             />

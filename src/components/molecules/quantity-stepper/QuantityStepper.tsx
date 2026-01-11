@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Plus, Minus } from "lucide-react";
 import { Button } from "@/components/atoms/button";
 import { cn } from "@/utils/classnames";
@@ -23,6 +24,7 @@ const QuantityStepper = ({
     className,
     variant = "default",
 }: QuantityStepperProps) => {
+    const t = useTranslations("common");
     const canDecrease = quantity > min;
     const canIncrease = max === undefined || quantity < max;
 
@@ -72,7 +74,7 @@ const QuantityStepper = ({
                     currentVariant.className,
                     !canDecrease && "opacity-50 cursor-not-allowed"
                 )}
-                aria-label="Decrease quantity"
+                aria-label={t("decreaseQuantity")}
             >
                 <Minus size={variant === "compact" ? 14 : 20} strokeWidth={variant === "compact" ? 3 : undefined} />
             </Button>
@@ -89,7 +91,7 @@ const QuantityStepper = ({
                     variant === "compact" && "hover:text-green-600",
                     !canIncrease && "opacity-50 cursor-not-allowed"
                 )}
-                aria-label="Increase quantity"
+                aria-label={t("increaseQuantity")}
             >
                 <Plus size={variant === "compact" ? 14 : 20} strokeWidth={variant === "compact" ? 3 : undefined} />
             </Button>

@@ -6,7 +6,8 @@
     "home": "হোম",
     "offers": "অফার",
     "cart": "কার্ট",
-    "account": "অ্যাকাউন্ট"
+    "account": "অ্যাকাউন্ট",
+    "language": "ভাষা"
   },
   "auth": {
     "login": {
@@ -43,5 +44,55 @@
     "didnt_receive_code": "কোড পাননি?",
     "sending": "পাঠানো হচ্ছে",
     "resend_otp": "OTP পুনরায় পাঠান"
+  },
+  "cart": {
+    "title": "কার্ট",
+    "clear": "পরিষ্কার",
+    "empty": "আপনার কার্ট খালি",
+    "subtotal": "উপমোট",
+    "deliveryFee": "ডেলিভারি ফি",
+    "discount": "ছাড়",
+    "grandTotal": "মোট পরিমাণ",
+    "completeYourMeal": "আপনার খাবার সম্পূর্ণ করুন",
+    "trending": "ট্রেন্ডিং"
+  },
+  "account": {
+    "myProfile": "আমার প্রোফাইল",
+    "goldMember": "গোল্ড সদস্য",
+    "platinumStatus": "প্ল্যাটিনাম স্ট্যাটাস",
+    "points": "পয়েন্ট",
+    "ptsToPlatinum": "পয়েন্ট প্ল্যাটিনাম স্ট্যাটাসে",
+    "recentOrders": "সাম্প্রতিক অর্ডার",
+    "viewAll": "সব দেখুন",
+    "reorder": "পুনরায় অর্ডার",
+    "savedItems": "সংরক্ষিত আইটেম",
+    "helpSupport": "সাহায্য ও সহায়তা",
+    "logOut": "লগ আউট",
+    "delivered": "ডেলিভারি হয়েছে"
+  },
+  "offers": {
+    "exclusiveOffers": "এক্সক্লুসিভ অফার",
+    "flashSaleEndsIn": "ফ্ল্যাশ সেল শেষ হচ্ছে",
+    "todaysTopPicks": "আজকের সেরা পছন্দ",
+    "aiPick": "AI পছন্দ",
+    "addToOrder": "অর্ডারে যোগ করুন"
+  },
+  "product": {
+    "notFound": "পণ্য পাওয়া যায়নি",
+    "chooseSize": "আকার নির্বাচন করুন",
+    "addExtras": "এক্সট্রা যোগ করুন",
+    "reviews": "রিভিউ",
+    "verifiedReviews": "যাচাইকৃত রিভিউ",
+    "new": "নতুন",
+    "seeAll": "সব দেখুন",
+    "helpful": "সহায়ক"
+  },
+  "common": {
+    "search": "অনুসন্ধান",
+    "goBack": "ফিরে যান",
+    "addToFavorites": "পছন্দে যোগ করুন",
+    "removeFromFavorites": "পছন্দ থেকে সরান",
+    "decreaseQuantity": "পরিমাণ কমান",
+    "increaseQuantity": "পরিমাণ বাড়ান"
   }
 }
