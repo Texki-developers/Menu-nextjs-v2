@@ -81,7 +81,11 @@
     "notFound": "未找到产品",
     "chooseSize": "选择尺寸",
     "addExtras": "添加额外选项",
-    "reviews": "评价"
+    "reviews": "评价",
+    "verifiedReviews": "已验证评价",
+    "new": "新",
+    "seeAll": "查看全部",
+    "helpful": "有用"
   },
   "common": {
     "search": "搜索",
