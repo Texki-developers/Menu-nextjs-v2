@@ -8,6 +8,7 @@ import Signup from "./signup/Signup";
 import { useAuth, AuthView } from "../_hooks/useAuth";
 import { authViewConfig } from "./auth.config";
 import { Button } from "@/components/atoms/button";
+import BackButton from "@/components/atoms/back-button/BackButton";
 import { useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 
@@ -69,7 +70,12 @@ const LoginTemplate = () => {
 
     return (
         <div className="w-full min-h-dvh bg-bg">
-            <div className="container max-w-md mx-auto px-4 pt-20 pb-32">
+            <div className="container max-w-md mx-auto px-4 pt-8 pb-32">
+                {/* Back Button */}
+                <div className="mb-6">
+                    <BackButton fallbackUrl={`/${params.vendor}/`} />
+                </div>
+
                 {/* Header */}
                 <div className="mb-8">
                     <h1 className="text-4xl font-bold text-gray-900 mb-2">{t(config.titleKey)}</h1>

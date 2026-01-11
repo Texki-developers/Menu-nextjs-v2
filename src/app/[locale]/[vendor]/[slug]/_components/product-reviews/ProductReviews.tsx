@@ -62,7 +62,7 @@ const ProductReviews = ({ reviews = MOCK_REVIEWS }: ProductReviewsProps) => {
     if (reviews.length === 0) return null;
 
     return (
-        <div className="mt-6">
+        <div className="mt-6 bg-white">
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
                 <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider flex items-center gap-2">
