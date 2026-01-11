@@ -38,7 +38,7 @@ const BackButton = ({ fallbackUrl, className, withBlur = false, ...props }: Back
             rounded="full"
             aria-label="Go back"
             className={cn(
-                withBlur && "group bg-white/30 backdrop-blur-md text-white hover:bg-white hover:text-black shadow-sm",
+                withBlur && "group bg-black/80 backdrop-blur-md text-white hover:bg-white hover:text-black shadow-sm",
                 className
             )}
             {...props}

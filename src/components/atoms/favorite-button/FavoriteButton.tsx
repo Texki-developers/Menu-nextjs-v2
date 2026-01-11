@@ -34,7 +34,7 @@ const FavoriteButton = ({ isFavorite: controlledIsFavorite, onToggle, className,
             iconOnly
             size="base"
             rounded="full"
-            className={`bg-white/30 backdrop-blur-md text-white hover:bg-white hover:text-red-500 shadow-sm ${className || ""}`}
+            className={`bg-black/80 backdrop-blur-md text-white hover:bg-white hover:text-red-500 shadow-sm ${className || ""}`}
             aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
             {...props}>
             <Heart

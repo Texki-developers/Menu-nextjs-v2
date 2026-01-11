@@ -43,7 +43,7 @@ const PAST_ORDERS_MOCK = [
 
 const AccountScreen = () => {
     return (
-        <div className="pb-32 animate-in fade-in slide-in-from-right-8 duration-300 bg-gray-50 min-h-screen">
+        <div className="pb-6 animate-in fade-in slide-in-from-right-8 duration-300 bg-gray-50 min-h-screen">
             {/* Profile Header */}
             <div className="bg-white pb-6 pt-12 px-6 rounded-b-3xl shadow-sm mb-6">
                 <div className="flex items-center justify-between mb-6">

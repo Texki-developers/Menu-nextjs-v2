@@ -7,6 +7,42 @@
     "offers": "优惠",
     "cart": "购物车",
     "account": "账户"
+  },
+  "auth": {
+    "login": {
+      "title": "登录",
+      "description": "输入您的电话号码以继续",
+      "buttonText": "继续"
+    },
+    "signup": {
+      "title": "注册",
+      "description": "创建您的账户以开始",
+      "buttonText": "注册"
+    },
+    "otp": {
+      "title": "验证 OTP",
+      "description": "输入发送到您手机的验证码",
+      "buttonText": "验证"
+    },
+    "phoneNumber": {
+      "label": "电话号码",
+      "placeholder": "输入您的电话号码"
+    },
+    "name": {
+      "label": "全名",
+      "placeholder": "输入您的全名"
+    },
+    "errors": {
+      "invalidPhoneNumber": "请输入有效的电话号码",
+      "invalidOtp": "请输入有效的 OTP",
+      "incorrectOtp": "您输入的 OTP 不正确。请重试。",
+      "invalidName": "请输入您的全名"
+    },
+    "resend_in_seconds": "在",
+    "seconds": "秒后重新发送",
+    "didnt_receive_code": "没有收到验证码？",
+    "sending": "发送中",
+    "resend_otp": "重新发送 OTP"
   }
 }
 

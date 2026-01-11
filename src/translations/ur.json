@@ -7,6 +7,42 @@
     "offers": "پیشکشیں",
     "cart": "کارٹ",
     "account": "اکاؤنٹ"
+  },
+  "auth": {
+    "login": {
+      "title": "لاگ ان",
+      "description": "جاری رکھنے کے لیے اپنا فون نمبر درج کریں",
+      "buttonText": "جاری رکھیں"
+    },
+    "signup": {
+      "title": "سائن اپ",
+      "description": "شروع کرنے کے لیے اپنا اکاؤنٹ بنائیں",
+      "buttonText": "سائن اپ"
+    },
+    "otp": {
+      "title": "OTP کی تصدیق کریں",
+      "description": "اپنے فون پر بھیجا گیا تصدیقی کوڈ درج کریں",
+      "buttonText": "تصدیق کریں"
+    },
+    "phoneNumber": {
+      "label": "فون نمبر",
+      "placeholder": "اپنا فون نمبر درج کریں"
+    },
+    "name": {
+      "label": "مکمل نام",
+      "placeholder": "اپنا مکمل نام درج کریں"
+    },
+    "errors": {
+      "invalidPhoneNumber": "براہ کرم درست فون نمبر درج کریں",
+      "invalidOtp": "براہ کرم درست OTP درج کریں",
+      "incorrectOtp": "آپ کا درج کردہ OTP غلط ہے۔ براہ کرم دوبارہ کوشش کریں۔",
+      "invalidName": "براہ کرم اپنا مکمل نام درج کریں"
+    },
+    "resend_in_seconds": "سیکنڈ میں دوبارہ بھیجیں",
+    "seconds": "سیکنڈ",
+    "didnt_receive_code": "کوڈ موصول نہیں ہوا؟",
+    "sending": "بھیجا جا رہا ہے",
+    "resend_otp": "OTP دوبارہ بھیجیں"
   }
 }
 

@@ -7,5 +7,41 @@
     "offers": "Mga Alok",
     "cart": "Cart",
     "account": "Account"
+  },
+  "auth": {
+    "login": {
+      "title": "Mag-login",
+      "description": "Ilagay ang iyong numero ng telepono upang magpatuloy",
+      "buttonText": "Magpatuloy"
+    },
+    "signup": {
+      "title": "Mag-sign Up",
+      "description": "Lumikha ng iyong account upang makapagsimula",
+      "buttonText": "Mag-sign Up"
+    },
+    "otp": {
+      "title": "I-verify ang OTP",
+      "description": "Ilagay ang verification code na ipinadala sa iyong telepono",
+      "buttonText": "I-verify"
+    },
+    "phoneNumber": {
+      "label": "Numero ng Telepono",
+      "placeholder": "Ilagay ang iyong numero ng telepono"
+    },
+    "name": {
+      "label": "Buong Pangalan",
+      "placeholder": "Ilagay ang iyong buong pangalan"
+    },
+    "errors": {
+      "invalidPhoneNumber": "Mangyaring maglagay ng wastong numero ng telepono",
+      "invalidOtp": "Mangyaring maglagay ng wastong OTP",
+      "incorrectOtp": "Ang OTP na iyong ipinasok ay hindi tama. Mangyaring subukan muli.",
+      "invalidName": "Mangyaring ilagay ang iyong buong pangalan"
+    },
+    "resend_in_seconds": "Ipadala muli sa",
+    "seconds": "segundo",
+    "didnt_receive_code": "Hindi natanggap ang code?",
+    "sending": "Nagpapadala",
+    "resend_otp": "Ipadala muli ang OTP"
   }
 }

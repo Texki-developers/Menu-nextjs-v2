@@ -16,7 +16,7 @@ export default async function RootLayout({ children, params }: { children: React
     }
 
     return (
-        <html lang={locale} className="bg-white">
+        <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} className="bg-white">
             <body className="w-full min-h-dvh max-w-container mx-auto h-full relative">
                 <div className="container">
                     <NextIntlClientProvider>

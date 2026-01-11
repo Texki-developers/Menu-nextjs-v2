@@ -7,5 +7,41 @@
     "offers": "Offers",
     "cart": "Cart",
     "account": "Account"
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "description": "Enter your phone number to continue",
+      "buttonText": "Continue"
+    },
+    "signup": {
+      "title": "Sign Up",
+      "description": "Create your account to get started",
+      "buttonText": "Sign Up"
+    },
+    "otp": {
+      "title": "Verify OTP",
+      "description": "Enter the verification code sent to your phone",
+      "buttonText": "Verify"
+    },
+    "phoneNumber": {
+      "label": "Phone Number",
+      "placeholder": "Enter your phone number"
+    },
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Enter your full name"
+    },
+    "errors": {
+      "invalidPhoneNumber": "Please enter a valid phone number",
+      "invalidOtp": "Please enter a valid OTP",
+      "incorrectOtp": "The OTP you entered is incorrect. Please try again.",
+      "invalidName": "Please enter your full name"
+    },
+    "resend_in_seconds": "Resend code in",
+    "seconds": "seconds",
+    "didnt_receive_code": "Didn't receive the code?",
+    "sending": "Sending",
+    "resend_otp": "Resend OTP"
   }
 }

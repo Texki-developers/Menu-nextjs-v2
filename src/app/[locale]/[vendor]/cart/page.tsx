@@ -20,7 +20,7 @@ const Cart = () => {
     const total = subtotal + deliveryFee - discount;
 
     return (
-        <div className="pb-35 animate-in fade-in slide-in-from-right-8 duration-300">
+        <div className="pb-30 animate-in fade-in slide-in-from-right-8 duration-300">
             {/* Cart Header - Table Number */}
             <CartHeader />
 
