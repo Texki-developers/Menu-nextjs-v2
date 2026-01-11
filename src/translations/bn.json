@@ -94,5 +94,31 @@
     "removeFromFavorites": "পছন্দ থেকে সরান",
     "decreaseQuantity": "পরিমাণ কমান",
     "increaseQuantity": "পরিমাণ বাড়ান"
+  },
+  "filter": {
+    "title": "ফিল্টার এবং সাজান",
+    "reset": "রিসেট",
+    "sortBy": "সাজান",
+    "dietary": "খাদ্য",
+    "priceRange": "মূল্য পরিসীমা",
+    "applyFilters": "ফিল্টার প্রয়োগ করুন",
+    "sortOptions": {
+      "recommended": "সুপারিশকৃত",
+      "rating": "রেটিং",
+      "priceLowToHigh": "মূল্য: কম থেকে বেশি",
+      "deliveryTime": "ডেলিভারি সময়"
+    },
+    "dietaryOptions": {
+      "veg": "শাকাহারী",
+      "nonVeg": "মাংসাহারী",
+      "vegan": "ভেগান",
+      "glutenFree": "গ্লুটেন-মুক্ত"
+    },
+    "priceRanges": {
+      "all": "সব",
+      "low": "< 30",
+      "mid": "30-60",
+      "high": "60+"
+    }
   }
 }

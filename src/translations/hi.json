@@ -94,6 +94,32 @@
     "removeFromFavorites": "पसंदीदा से हटाएं",
     "decreaseQuantity": "मात्रा कम करें",
     "increaseQuantity": "मात्रा बढ़ाएं"
+  },
+  "filter": {
+    "title": "फ़िल्टर और सॉर्ट",
+    "reset": "रीसेट",
+    "sortBy": "क्रमबद्ध करें",
+    "dietary": "आहार",
+    "priceRange": "मूल्य सीमा",
+    "applyFilters": "फ़िल्टर लागू करें",
+    "sortOptions": {
+      "recommended": "अनुशंसित",
+      "rating": "रेटिंग",
+      "priceLowToHigh": "मूल्य: कम से अधिक",
+      "deliveryTime": "डिलीवरी समय"
+    },
+    "dietaryOptions": {
+      "veg": "शाकाहारी",
+      "nonVeg": "मांसाहारी",
+      "vegan": "वीगन",
+      "glutenFree": "ग्लूटेन-मुक्त"
+    },
+    "priceRanges": {
+      "all": "सभी",
+      "low": "< 30",
+      "mid": "30-60",
+      "high": "60+"
+    }
   }
 }
 

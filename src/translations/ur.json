@@ -94,6 +94,32 @@
     "removeFromFavorites": "پسندیدہ سے ہٹائیں",
     "decreaseQuantity": "مقدار کم کریں",
     "increaseQuantity": "مقدار بڑھائیں"
+  },
+  "filter": {
+    "title": "فلٹر اور ترتیب",
+    "reset": "ری سیٹ",
+    "sortBy": "ترتیب دیں",
+    "dietary": "خوراک",
+    "priceRange": "قیمت کی حد",
+    "applyFilters": "فلٹرز لاگو کریں",
+    "sortOptions": {
+      "recommended": "تجویز کردہ",
+      "rating": "ریٹنگ",
+      "priceLowToHigh": "قیمت: کم سے زیادہ",
+      "deliveryTime": "ڈیلیوری کا وقت"
+    },
+    "dietaryOptions": {
+      "veg": "سبزی",
+      "nonVeg": "غیر سبزی",
+      "vegan": "وگن",
+      "glutenFree": "گلوٹین فری"
+    },
+    "priceRanges": {
+      "all": "سب",
+      "low": "< 30",
+      "mid": "30-60",
+      "high": "60+"
+    }
   }
 }
 

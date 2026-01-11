@@ -94,6 +94,32 @@
     "removeFromFavorites": "ఇష్టాల నుండి తీసివేయండి",
     "decreaseQuantity": "పరిమాణాన్ని తగ్గించండి",
     "increaseQuantity": "పరిమాణాన్ని పెంచండి"
+  },
+  "filter": {
+    "title": "ఫిల్టర్ మరియు క్రమబద్ధీకరణ",
+    "reset": "రీసెట్",
+    "sortBy": "క్రమబద్ధీకరించు",
+    "dietary": "ఆహార",
+    "priceRange": "ధర పరిధి",
+    "applyFilters": "ఫిల్టర్‌లను వర్తింపజేయండి",
+    "sortOptions": {
+      "recommended": "సిఫార్సు చేయబడింది",
+      "rating": "రేటింగ్",
+      "priceLowToHigh": "ధర: తక్కువ నుండి ఎక్కువ",
+      "deliveryTime": "డెలివరీ సమయం"
+    },
+    "dietaryOptions": {
+      "veg": "శాకాహారి",
+      "nonVeg": "మాంసాహారి",
+      "vegan": "వీగన్",
+      "glutenFree": "గ్లూటెన్-ఫ్రీ"
+    },
+    "priceRanges": {
+      "all": "అన్నీ",
+      "low": "< 30",
+      "mid": "30-60",
+      "high": "60+"
+    }
   }
 }
 
