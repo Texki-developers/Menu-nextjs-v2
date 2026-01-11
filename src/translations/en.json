@@ -94,5 +94,31 @@
     "removeFromFavorites": "Remove from favorites",
     "decreaseQuantity": "Decrease quantity",
     "increaseQuantity": "Increase quantity"
+  },
+  "filter": {
+    "title": "Filter & Sort",
+    "reset": "Reset",
+    "sortBy": "Sort By",
+    "dietary": "Dietary",
+    "priceRange": "Price Range",
+    "applyFilters": "Apply Filters",
+    "sortOptions": {
+      "recommended": "Recommended",
+      "rating": "Rating",
+      "priceLowToHigh": "Price: Low to High",
+      "deliveryTime": "Delivery Time"
+    },
+    "dietaryOptions": {
+      "veg": "Veg",
+      "nonVeg": "Non-Veg",
+      "vegan": "Vegan",
+      "glutenFree": "Gluten-Free"
+    },
+    "priceRanges": {
+      "all": "All",
+      "low": "< 30",
+      "mid": "30-60",
+      "high": "60+"
+    }
   }
 }

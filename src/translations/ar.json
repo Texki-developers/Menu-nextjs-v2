@@ -94,5 +94,31 @@
     "removeFromFavorites": "إزالة من المفضلة",
     "decreaseQuantity": "تقليل الكمية",
     "increaseQuantity": "زيادة الكمية"
+  },
+  "filter": {
+    "title": "تصفية وترتيب",
+    "reset": "إعادة تعيين",
+    "sortBy": "ترتيب حسب",
+    "dietary": "نظام غذائي",
+    "priceRange": "نطاق السعر",
+    "applyFilters": "تطبيق المرشحات",
+    "sortOptions": {
+      "recommended": "موصى به",
+      "rating": "التقييم",
+      "priceLowToHigh": "السعر: من الأقل إلى الأعلى",
+      "deliveryTime": "وقت التوصيل"
+    },
+    "dietaryOptions": {
+      "veg": "نباتي",
+      "nonVeg": "غير نباتي",
+      "vegan": "نباتي صرف",
+      "glutenFree": "خالي من الجلوتين"
+    },
+    "priceRanges": {
+      "all": "الكل",
+      "low": "< 30",
+      "mid": "30-60",
+      "high": "60+"
+    }
   }
 }

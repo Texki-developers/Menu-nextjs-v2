@@ -94,6 +94,32 @@
     "removeFromFavorites": "حذف از علاقه‌مندی‌ها",
     "decreaseQuantity": "کاهش تعداد",
     "increaseQuantity": "افزایش تعداد"
+  },
+  "filter": {
+    "title": "فیلتر و مرتب‌سازی",
+    "reset": "بازنشانی",
+    "sortBy": "مرتب‌سازی بر اساس",
+    "dietary": "رژیم غذایی",
+    "priceRange": "محدوده قیمت",
+    "applyFilters": "اعمال فیلترها",
+    "sortOptions": {
+      "recommended": "پیشنهادی",
+      "rating": "امتیاز",
+      "priceLowToHigh": "قیمت: کم به زیاد",
+      "deliveryTime": "زمان تحویل"
+    },
+    "dietaryOptions": {
+      "veg": "گیاهی",
+      "nonVeg": "غیرگیاهی",
+      "vegan": "وگان",
+      "glutenFree": "بدون گلوتن"
+    },
+    "priceRanges": {
+      "all": "همه",
+      "low": "< 30",
+      "mid": "30-60",
+      "high": "60+"
+    }
   }
 }
 

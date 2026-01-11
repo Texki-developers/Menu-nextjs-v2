@@ -94,6 +94,32 @@
     "removeFromFavorites": "പ്രിയങ്കരങ്ങളിൽ നിന്ന് നീക്കം ചെയ്യുക",
     "decreaseQuantity": "അളവ് കുറയ്ക്കുക",
     "increaseQuantity": "അളവ് വർദ്ധിപ്പിക്കുക"
+  },
+  "filter": {
+    "title": "ഫിൽട്ടർ & സോർട്ട്",
+    "reset": "റീസെറ്റ്",
+    "sortBy": "ക്രമീകരിക്കുക",
+    "dietary": "ആഹാരം",
+    "priceRange": "വില പരിധി",
+    "applyFilters": "ഫിൽട്ടറുകൾ പ്രയോഗിക്കുക",
+    "sortOptions": {
+      "recommended": "ശുപാർശ ചെയ്തത്",
+      "rating": "റേറ്റിംഗ്",
+      "priceLowToHigh": "വില: കുറഞ്ഞതിൽ നിന്ന് ഉയർന്നതിലേക്ക്",
+      "deliveryTime": "ഡെലിവറി സമയം"
+    },
+    "dietaryOptions": {
+      "veg": "ശാകാഹാരി",
+      "nonVeg": "മാംസാഹാരി",
+      "vegan": "വീഗൻ",
+      "glutenFree": "ഗ്ലൂട്ടൻ-ഫ്രീ"
+    },
+    "priceRanges": {
+      "all": "എല്ലാം",
+      "low": "< 30",
+      "mid": "30-60",
+      "high": "60+"
+    }
   }
 }
 

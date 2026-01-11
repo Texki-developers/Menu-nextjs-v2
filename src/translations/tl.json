@@ -94,5 +94,31 @@
     "removeFromFavorites": "Alisin sa mga paborito",
     "decreaseQuantity": "Bawasan ang dami",
     "increaseQuantity": "Dagdagan ang dami"
+  },
+  "filter": {
+    "title": "Filter at Ayusin",
+    "reset": "I-reset",
+    "sortBy": "Ayusin Ayon Sa",
+    "dietary": "Dietary",
+    "priceRange": "Saklaw ng Presyo",
+    "applyFilters": "Ilapat ang mga Filter",
+    "sortOptions": {
+      "recommended": "Inirerekomenda",
+      "rating": "Rating",
+      "priceLowToHigh": "Presyo: Mababa hanggang Mataas",
+      "deliveryTime": "Oras ng Paghahatid"
+    },
+    "dietaryOptions": {
+      "veg": "Veg",
+      "nonVeg": "Non-Veg",
+      "vegan": "Vegan",
+      "glutenFree": "Gluten-Free"
+    },
+    "priceRanges": {
+      "all": "Lahat",
+      "low": "< 30",
+      "mid": "30-60",
+      "high": "60+"
+    }
   }
 }
