@@ -2,6 +2,7 @@ import ListingHeader from "./_components/listing-header/ListingHeader";
 import Categories from "./_components/categories/Categories";
 import OffersBanner from "./_components/offers-banner/OffersBanner";
 import ProductListing from "./_components/products/ProductListing";
+import FilterModal from "./_components/filter-modal/FilterModal";
 
 const ListingTemplate = () => {
     return (
@@ -10,6 +11,7 @@ const ListingTemplate = () => {
             <Categories />
             <OffersBanner />
             <ProductListing />
+            <FilterModal />
         </div>
     );
 };
