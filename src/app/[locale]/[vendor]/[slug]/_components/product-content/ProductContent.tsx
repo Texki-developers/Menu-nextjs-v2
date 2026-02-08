@@ -2,7 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import Price from "@/components/organisms/price/Price";
-import { Clock, Star } from "lucide-react";
+import { Clock, Star, Box } from "lucide-react";
+import { Button } from "@/components/atoms/button";
 import { RadioOption } from "@/components/atoms/radio-option";
 import { CheckboxOption } from "@/components/atoms/checkbox-option";
 import { useProductOptionsStore } from "@/store/product-options/product-options.store";
@@ -17,6 +18,10 @@ const ProductContent = ({ product }: ProductContentProps) => {
   const t = useTranslations();
   const { selectedSize, selectedExtras, setSelectedSize, toggleExtra } = useProductOptionsStore();
 
+  const handleArClick = () => {
+    console.log("AR View Clicked");
+  };
+
   const sizes = product.sizes || [];
   const extras = product.extras || [];
   return (
@@ -24,7 +29,22 @@ const ProductContent = ({ product }: ProductContentProps) => {
       <div className="w-full h-[calc(min(100vw,440px)-20px)]"></div>
       <div className="bg-white p-4 pb-30 h-full rounded-t-2xl pointer-events-auto ">
         <div className="mx-auto w-12 h-1 bg-gray-500 rounded-full "></div>
-        <div className="flex mt-4 justify-between">
+
+        {/* AR Button */}
+        <div className="flex justify-center mt-4 mb-2">
+             <Button
+                onClick={handleArClick}
+                variant="secondary"
+                size="base"
+                rounded="lg" 
+                className="shadow-lg shadow-gray-300 font-semibold px-6 flex items-center gap-2"
+            >
+                <Box size={18} />
+                <span>View in Table</span>
+            </Button>
+        </div>
+
+        <div className="flex mt-2 justify-between">
           <div>
             <h1 className="text-2xl font-black text-gray-900 leading-tight mb-2">{product.vendorName || product.title}</h1>
             <div className="flex items-center gap-2">

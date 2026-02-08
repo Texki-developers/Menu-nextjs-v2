@@ -24,7 +24,10 @@ const page = async ({ params }: PageProps) => {
 
     return (
         <div className="bg-gray-100 w-full h-dvh">
-            <ProductMedia images={product.images || [product.image]} alt={product.title} />
+            <ProductMedia
+                images={product.images || [product.image]}
+                alt={product.title}
+            />
             <ProductButtons />
             <ProductContent product={product} />
             <ProductActions price={product.price} />
