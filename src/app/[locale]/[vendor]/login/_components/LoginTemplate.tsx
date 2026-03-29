@@ -31,8 +31,10 @@ const LoginTemplate = () => {
     };
 
     const handlePhoneChange = (value: { value: string; country: string }) => {
-        setPhoneNumber(value);
-        setError("");
+        setPhoneNumber(prev => 
+            prev.value === value.value && prev.country === value.country ? prev : value
+        );
+        setError(prev => prev === "" ? prev : "");
     };
 
     const handleLoginSubmit = (e: React.FormEvent<HTMLFormElement>) => {
