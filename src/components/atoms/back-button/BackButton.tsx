@@ -18,15 +18,13 @@ const BackButton = ({ fallbackUrl, className, withBlur = false, ...props }: Back
     const t = useTranslations("common");
     const router = useRouter();
     const params = useParams();
-    const vendor = params?.vendor as string | undefined;
+    const branchId = params?.branchId as string | undefined;
 
     const handleBack = () => {
-        // Check if there's history to go back to
         if (typeof window !== "undefined" && window.history.length > 1) {
             router.back();
         } else {
-            // If no history, navigate to fallback URL or home
-            const targetUrl = fallbackUrl || (vendor ? `/${vendor}/` : "/");
+            const targetUrl = fallbackUrl || (branchId ? `/${branchId}/` : "/");
             router.push(targetUrl);
         }
     };

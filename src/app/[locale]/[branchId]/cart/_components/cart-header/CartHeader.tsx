@@ -17,15 +17,13 @@ const CartHeader = ({
 }: CartHeaderProps) => {
     const t = useTranslations();
     const router = useRouter();
-    const { vendor }: { vendor: string } = useParams();
+    const { branchId }: { branchId: string } = useParams();
 
     const handleBack = () => {
-        // Check if there's history to go back to
         if (typeof window !== "undefined" && window.history.length > 1) {
             router.back();
         } else {
-            // If no history, navigate to home
-            router.push(`/${vendor}/`);
+            router.push(`/${branchId}/`);
         }
     };
 

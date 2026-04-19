@@ -22,7 +22,7 @@ const LoginTemplate = () => {
     const [otp, setOtp] = useState("");
     const [name, setName] = useState("");
     const router = useRouter();
-    const params: { vendor: string } = useParams();
+    const params: { branchId: string } = useParams();
 
     const handleButtonClick = () => {
         if (formRef.current) {
@@ -65,7 +65,7 @@ const LoginTemplate = () => {
             setError(t("auth.errors.invalidName"));
             return;
         }
-        router.push(`/${params.vendor}/`);
+        router.push(`/${params.branchId}/`);
     };
 
     return (
@@ -73,7 +73,7 @@ const LoginTemplate = () => {
             <div className="container max-w-md mx-auto px-4 pt-8 pb-32">
                 {/* Back Button */}
                 <div className="mb-6">
-                    <BackButton fallbackUrl={`/${params.vendor}/`} />
+                    <BackButton fallbackUrl={`/${params.branchId}/`} />
                 </div>
 
                 {/* Header */}

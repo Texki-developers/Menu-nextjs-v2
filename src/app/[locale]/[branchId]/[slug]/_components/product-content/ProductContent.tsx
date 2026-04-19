@@ -7,7 +7,7 @@ import { Button } from "@/components/atoms/button";
 import { RadioOption } from "@/components/atoms/radio-option";
 import { CheckboxOption } from "@/components/atoms/checkbox-option";
 import { useProductOptionsStore } from "@/store/product-options/product-options.store";
-import { ProductConfig } from "@/app/[locale]/[vendor]/(bottom-tabs-pages)/_listing/_components/products/products.config";
+import { ProductConfig } from "@/app/[locale]/[branchId]/(bottom-tabs-pages)/_listing/_components/products/products.config";
 import ProductReviews from "../product-reviews/ProductReviews";
 
 interface ProductContentProps {

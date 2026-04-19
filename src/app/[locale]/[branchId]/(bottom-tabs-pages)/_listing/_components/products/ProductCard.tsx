@@ -29,15 +29,15 @@ const ProductCard = ({ item }: ProductCardProps) => {
     const [qty, setQty] = useState(0);
     const router = useRouter();
     const params = useParams();
-    const vendor = params?.vendor as string | undefined;
+    const branchId = params?.branchId as string | undefined;
 
     const handleAdd = () => setQty(1);
     const handleInc = () => setQty((q) => q + 1);
     const handleDec = () => setQty((q) => (q - 1 > 0 ? q - 1 : 0));
 
     const handleCardClick = () => {
-        if (vendor && item.slug) {
-            router.push(`/${vendor}/${item.slug}`);
+        if (branchId && item.slug) {
+            router.push(`/${branchId}/${item.slug}`);
         }
     };
 

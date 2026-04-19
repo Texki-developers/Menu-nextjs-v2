@@ -4,13 +4,17 @@ import OffersBanner from "./_components/offers-banner/OffersBanner";
 import ProductListing from "./_components/products/ProductListing";
 import FilterModal from "./_components/filter-modal/FilterModal";
 
-const ListingTemplate = () => {
+interface ListingTemplateProps {
+    branchId: string;
+}
+
+const ListingTemplate = ({ branchId }: ListingTemplateProps) => {
     return (
         <div className="flex flex-col gap-4">
             <ListingHeader />
             <Categories />
             <OffersBanner />
-            <ProductListing />
+            <ProductListing branchId={branchId} />
             <FilterModal />
         </div>
     );

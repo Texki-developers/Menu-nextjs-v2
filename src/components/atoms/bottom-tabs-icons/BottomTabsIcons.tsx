@@ -19,7 +19,7 @@ const BottomTabsIcons: React.FC<BottomTabsIconsProps> = ({ tab }) => {
   const { togglePopup } = useLanguageStore();
   const pathname = usePathname();
   const router = useRouter();
-  const { vendor }: { vendor: string } = useParams();
+  const { branchId }: { branchId: string } = useParams();
   const Icon = tab.icon;
 
   const isActive = useMemo(() => {
@@ -47,7 +47,7 @@ const BottomTabsIcons: React.FC<BottomTabsIconsProps> = ({ tab }) => {
     if (!tab.url) {
       return;
     }
-    const targetPath = vendor ? `/${vendor}${tab.url}` : tab.url;
+    const targetPath = branchId ? `/${branchId}${tab.url}` : tab.url;
     router.push(targetPath);
   };
 
