@@ -46,6 +46,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  max-height: 100dvh;
+  overflow-y: hidden;
+}
+
 .container {
   @apply max-w-[440px] mx-auto;
 }

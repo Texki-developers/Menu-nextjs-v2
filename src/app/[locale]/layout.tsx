@@ -2,7 +2,6 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
-import BottomTabs from "@/components/organisms/bottom-tabs/BottomTabs";
 import LanguagePopup from "@/components/organisms/language-popup/LanguagePopup";
 
 export function generateStaticParams() {
@@ -17,7 +16,7 @@ export default async function RootLayout({ children, params }: { children: React
 
     return (
         <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} className="bg-white">
-            <body className="w-full min-h-dvh max-w-container mx-auto h-full relative">
+            <body className="w-full min-h-dvh max-h-dvh overflow-hidden! max-w-container mx-auto h-full relative">
                 <div className="container">
                     <NextIntlClientProvider>
                         <LanguagePopup />

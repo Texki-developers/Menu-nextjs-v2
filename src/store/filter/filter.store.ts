@@ -7,4 +7,6 @@ export const useFilterStore = create<FilterStore>((set) => ({
   isFilterModalOpen: false,
   setFilterModalOpen: (isOpen: boolean) => set({ isFilterModalOpen: isOpen }),
   toggleFilterModal: () => set((state) => ({ isFilterModalOpen: !state.isFilterModalOpen })),
+  searchQuery: "",
+  setSearchQuery: (query: string) => set({ searchQuery: query }),
 }));

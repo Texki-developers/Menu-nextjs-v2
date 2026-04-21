@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { Heart, Star } from "lucide-react";
 import { useRouter } from "@/i18n/navigation";
@@ -8,41 +7,80 @@ import { useParams } from "next/navigation";
 import Price from "@/components/organisms/price/Price";
 import { Button } from "@/components/atoms/button";
 import { QuantityStepper } from "@/components/molecules/quantity-stepper";
+import { useCartStore } from "@/store/cart/cart.store";
+import type { ProductConfig } from "./products.config";
 
 interface ProductCardProps {
-    item: {
-        id: string;
-        slug: string;
-        image: string;
-        title: string;
-        price: string | number;
-        originalPrice?: string | number;
-        description?: string;
-        rating?: number;
-        isVeg?: boolean;
-        isCustomizable?: boolean;
-        bestseller?: boolean;
-    };
+    item: ProductConfig;
 }
 
 const ProductCard = ({ item }: ProductCardProps) => {
-    const [qty, setQty] = useState(0);
     const router = useRouter();
     const params = useParams();
     const branchId = params?.branchId as string | undefined;
 
-    const handleAdd = () => setQty(1);
-    const handleInc = () => setQty((q) => q + 1);
-    const handleDec = () => setQty((q) => (q - 1 > 0 ? q - 1 : 0));
+    const hasVariants = (item.sizes?.length ?? 0) > 0;
+    const hasExtras = (item.extras?.length ?? 0) > 0;
+    const needsCustomization = hasVariants || hasExtras;
+
+    const cart = useCartStore((s) => s.cart);
+    const isMutating = useCartStore((s) => s.isMutating);
+    const addItem = useCartStore((s) => s.add);
+    const updateItem = useCartStore((s) => s.update);
+    const removeItem = useCartStore((s) => s.remove);
+
+    const plainLine = cart?.items.find(
+        (line) =>
+            line.menu_item_id === item.id &&
+            !line.variant_uuid &&
+            line.extras.length === 0,
+    );
+    const qty = plainLine?.quantity ?? 0;
+
+    const stop = (e: React.MouseEvent) => e.stopPropagation();
 
     const handleCardClick = () => {
-        if (branchId && item.slug) {
+        if (branchId && item.slug) router.push(`/${branchId}/${item.slug}`);
+    };
+
+    const handleAdd = async (e: React.MouseEvent) => {
+        stop(e);
+        if (!branchId) return;
+        if (needsCustomization) {
             router.push(`/${branchId}/${item.slug}`);
+            return;
+        }
+        try {
+            await addItem(branchId, { menu_item_id: item.id, quantity: 1 });
+        } catch (err) {
+            console.error("[listing add] failed:", err);
         }
     };
 
-    const handleButtonClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
+    const handleIncrease = async () => {
+        if (!branchId || !plainLine) return;
+        try {
+            await updateItem(branchId, plainLine.cart_item_id, {
+                quantity: plainLine.quantity + 1,
+            });
+        } catch (err) {
+            console.error("[listing increase] failed:", err);
+        }
+    };
+
+    const handleDecrease = async () => {
+        if (!branchId || !plainLine) return;
+        try {
+            if (plainLine.quantity <= 1) {
+                await removeItem(branchId, plainLine.cart_item_id);
+            } else {
+                await updateItem(branchId, plainLine.cart_item_id, {
+                    quantity: plainLine.quantity - 1,
+                });
+            }
+        } catch (err) {
+            console.error("[listing decrease] failed:", err);
+        }
     };
 
     return (
@@ -50,7 +88,6 @@ const ProductCard = ({ item }: ProductCardProps) => {
             className="bg-white p-3 h-full rounded-2xl border border-gray-100 shadow-sm flex gap-4 relative overflow-hidden group cursor-pointer"
             onClick={handleCardClick}
         >
-            {/* Product Image Section */}
             <div className="w-30 shrink-0 relative rounded-xl overflow-hidden bg-gray-100">
                 <Image
                     src={item.image}
@@ -63,8 +100,6 @@ const ProductCard = ({ item }: ProductCardProps) => {
                         BESTSELLER
                     </div>
                 )}
-
-                {/* BIGGER FAVORITE BUTTON */}
                 <Button
                     variant="ghost"
                     iconOnly
@@ -72,30 +107,24 @@ const ProductCard = ({ item }: ProductCardProps) => {
                     rounded="full"
                     className="absolute top-2 right-2 bg-white/30 backdrop-blur-md text-white hover:bg-white hover:text-red-500 shadow-sm z-10"
                     aria-label="Add to favorites"
-                    onClick={handleButtonClick}
+                    onClick={stop}
                 >
-                    <Heart
-                        size={20}
-                        fill={qty > 0 ? "currentColor" : "none"}
-                        className={qty > 0 ? "text-red-500" : ""}
-                    />
+                    <Heart size={20} />
                 </Button>
             </div>
 
-            {/* Content Section */}
             <div className="flex-1 flex flex-col justify-between py-1">
                 <div>
                     <div className="flex items-start justify-between mb-1.5">
                         <div className="flex items-center gap-2">
-                            {/* Veg/Non-Veg Indicator */}
                             <div
-                                className={`w-3.5 h-3.5 border ${item.isVeg ? "border-green-600" : "border-red-600"
-                                    } flex items-center justify-center p-[1.5px]`}>
+                                className={`w-3.5 h-3.5 border ${item.isVeg ? "border-green-600" : "border-red-600"} flex items-center justify-center p-[1.5px]`}
+                            >
                                 <div
-                                    className={`w-full h-full rounded-full ${item.isVeg ? "bg-green-600" : "bg-red-600"
-                                        }`}></div>
+                                    className={`w-full h-full rounded-full ${item.isVeg ? "bg-green-600" : "bg-red-600"}`}
+                                ></div>
                             </div>
-                            {item.isCustomizable && (
+                            {needsCustomization && (
                                 <span className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded font-medium tracking-tight">
                                     Customizable
                                 </span>
@@ -129,26 +158,23 @@ const ProductCard = ({ item }: ProductCardProps) => {
                         offerPriceColor="gray"
                     />
 
-                    {/* Smart Action Button (Stepper) - OPTIMIZED FOR TOUCH */}
                     {qty === 0 ? (
                         <Button
-                            onClick={(e) => {
-                                handleButtonClick(e);
-                                handleAdd();
-                            }}
+                            onClick={handleAdd}
                             variant="secondary"
                             size="base"
                             rounded="md"
+                            disabled={isMutating}
                         >
                             Add
                         </Button>
                     ) : (
-                        <div onClick={handleButtonClick}>
+                        <div onClick={stop}>
                             <QuantityStepper
                                 quantity={qty}
-                                onIncrease={handleInc}
-                                onDecrease={handleDec}
-                                min={1}
+                                onIncrease={handleIncrease}
+                                onDecrease={handleDecrease}
+                                min={0}
                                 variant="dark"
                             />
                         </div>
@@ -160,4 +186,3 @@ const ProductCard = ({ item }: ProductCardProps) => {
 };
 
 export default ProductCard;
-

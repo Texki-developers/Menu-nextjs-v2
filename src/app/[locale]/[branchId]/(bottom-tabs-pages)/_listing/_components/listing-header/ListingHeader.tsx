@@ -6,12 +6,17 @@ import { Button } from "@/components/atoms/button";
 import { useFilterStore } from "@/store/filter/filter.store";
 
 const ListingHeader = () => {
-    const { setFilterModalOpen } = useFilterStore();
+    const { setFilterModalOpen, searchQuery, setSearchQuery } = useFilterStore();
 
     return (
         <div className="grid grid-cols-[1fr_52px] items-stretch justify-between gap-4">
             <div className="flex-1">
-                <SearchInput />
+                <SearchInput
+                    inputProps={{
+                        value: searchQuery,
+                        onChange: (e) => setSearchQuery(e.target.value),
+                    }}
+                />
             </div>
             <Button
                 variant="outline"

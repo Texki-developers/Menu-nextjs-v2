@@ -7,10 +7,18 @@ export class ApiError extends Error {
   }
 }
 
+export interface ApiEnvelope<T> {
+  success: boolean;
+  data: T;
+  meta?: Record<string, unknown>;
+}
+
 export interface RequestOptions extends Omit<RequestInit, "body"> {
   query?: Record<string, string | number | boolean | undefined | null>;
   body?: unknown;
   revalidate?: number | false;
+  /** If true, return the raw response without unwrapping the { success, data } envelope. */
+  raw?: boolean;
 }
 
 const buildUrl = (path: string, query?: RequestOptions["query"]): string => {
@@ -30,7 +38,7 @@ export async function apiFetch<T>(path: string, opts: RequestOptions = {}): Prom
   if (!API_BASE_URL) {
     throw new ApiError("NEXT_PUBLIC_API_BASE_URL is not configured", 0);
   }
-  const { query, body, revalidate, headers, ...rest } = opts;
+  const { query, body, revalidate, headers, raw, ...rest } = opts;
   const res = await fetch(buildUrl(path, query), {
     ...rest,
     headers: {
@@ -51,5 +59,10 @@ export async function apiFetch<T>(path: string, opts: RequestOptions = {}): Prom
   }
 
   if (res.status === 204) return undefined as T;
-  return (await res.json()) as T;
+  const json = await res.json();
+  if (raw) return json as T;
+  if (json && typeof json === "object" && "data" in json && "success" in json) {
+    return (json as ApiEnvelope<T>).data;
+  }
+  return json as T;
 }
