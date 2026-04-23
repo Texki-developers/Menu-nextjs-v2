@@ -10,9 +10,10 @@ interface OtpEnterProps {
     onOtpChange?: (otp: string) => void;
     error?: string;
     onValidateOtp?: (otp: string) => Promise<boolean>;
+    onResend?: () => Promise<void> | void;
 }
 
-const OtpEnter = ({ formRef, onSubmit, onOtpChange, error, onValidateOtp }: OtpEnterProps) => {
+const OtpEnter = ({ formRef, onSubmit, onOtpChange, error, onValidateOtp, onResend }: OtpEnterProps) => {
     const t = useTranslations("auth");
     const [otpValue, setOtpValue] = useState("");
     const [isResendLoading, setIsResendLoading] = useState(false);
@@ -77,10 +78,13 @@ const OtpEnter = ({ formRef, onSubmit, onOtpChange, error, onValidateOtp }: OtpE
 
     const handleResend = async () => {
         setIsResendLoading(true);
-        setValidationError(""); // Clear validation error when resending
-        // Handle resend OTP logic here
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate API call
-        setIsResendLoading(false);
+        setValidationError("");
+        try {
+            if (onResend) await onResend();
+            else await new Promise((resolve) => setTimeout(resolve, 1000));
+        } finally {
+            setIsResendLoading(false);
+        }
     };
 
     // Combine both error sources (prop error and validation error)

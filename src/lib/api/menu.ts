@@ -71,6 +71,10 @@ export const toProductConfig = (item: CustomerMenuItem): ProductConfig => {
     isCustomizable: false,
     bestseller: item.is_featured,
     images: item.media?.map((m) => m.url).filter(Boolean),
+    type: item.type,
+    spiceLevel: item.spice_level,
+    tags: item.tags,
+    isFeatured: item.is_featured,
   };
 };
 

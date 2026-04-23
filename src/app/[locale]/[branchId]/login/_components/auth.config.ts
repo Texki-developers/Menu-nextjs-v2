@@ -22,4 +22,14 @@ export const authViewConfig: Record<AuthView, AuthViewConfig> = {
     descriptionKey: "auth.otp.description",
     buttonTextKey: "auth.otp.buttonText",
   },
+  [AuthView.EMAIL_LOGIN]: {
+    titleKey: "auth.emailLogin.title",
+    descriptionKey: "auth.emailLogin.description",
+    buttonTextKey: "auth.emailLogin.buttonText",
+  },
+  [AuthView.EMAIL_OTP]: {
+    titleKey: "auth.otp.title",
+    descriptionKey: "auth.emailOtp.description",
+    buttonTextKey: "auth.otp.buttonText",
+  },
 };

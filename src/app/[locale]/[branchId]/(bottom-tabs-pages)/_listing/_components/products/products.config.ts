@@ -27,6 +27,11 @@ export interface ProductConfig {
   vendorName?: string;
   deliveryTime?: string;
   images?: string[];
+  /** Raw fields used by the filter engine. */
+  type?: string;
+  spiceLevel?: string;
+  tags?: string[];
+  isFeatured?: boolean;
 }
 
 export const productsConfig: ProductConfig[] = [
