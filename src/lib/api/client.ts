@@ -34,12 +34,36 @@ const buildUrl = (path: string, query?: RequestOptions["query"]): string => {
   return url.toString();
 };
 
-export async function apiFetch<T>(path: string, opts: RequestOptions = {}): Promise<T> {
-  if (!API_BASE_URL) {
-    throw new ApiError("NEXT_PUBLIC_API_BASE_URL is not configured", 0);
+const REFRESH_PATH = "/auth/customer/refresh";
+const NO_REFRESH_PATHS = [REFRESH_PATH, "/auth/customer/login", "/auth/customer/logout"];
+
+let refreshPromise: Promise<boolean> | null = null;
+
+const refreshOnce = (): Promise<boolean> => {
+  if (!refreshPromise) {
+    refreshPromise = fetch(buildUrl(REFRESH_PATH), {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+    })
+      .then((res) => res.ok)
+      .catch(() => false)
+      .finally(() => {
+        refreshPromise = null;
+      }) as Promise<boolean>;
   }
-  const { query, body, revalidate, headers, raw, ...rest } = opts;
-  const res = await fetch(buildUrl(path, query), {
+  return refreshPromise;
+};
+
+const performRequest = (
+  path: string,
+  query: RequestOptions["query"],
+  body: unknown,
+  revalidate: number | false | undefined,
+  headers: HeadersInit | undefined,
+  rest: Omit<RequestInit, "body">,
+) =>
+  fetch(buildUrl(path, query), {
     ...rest,
     headers: {
       "Content-Type": "application/json",
@@ -47,8 +71,30 @@ export async function apiFetch<T>(path: string, opts: RequestOptions = {}): Prom
       ...headers,
     },
     body: body !== undefined ? JSON.stringify(body) : undefined,
-    next: revalidate !== undefined ? { revalidate: revalidate === false ? 0 : revalidate } : undefined,
+    next:
+      revalidate !== undefined
+        ? { revalidate: revalidate === false ? 0 : revalidate }
+        : undefined,
   });
+
+export async function apiFetch<T>(path: string, opts: RequestOptions = {}): Promise<T> {
+  if (!API_BASE_URL) {
+    throw new ApiError("NEXT_PUBLIC_API_BASE_URL is not configured", 0);
+  }
+  const { query, body, revalidate, headers, raw, ...rest } = opts;
+
+  let res = await performRequest(path, query, body, revalidate, headers, rest);
+
+  if (
+    res.status === 401 &&
+    typeof window !== "undefined" &&
+    !NO_REFRESH_PATHS.some((p) => path.startsWith(p))
+  ) {
+    const refreshed = await refreshOnce();
+    if (refreshed) {
+      res = await performRequest(path, query, body, revalidate, headers, rest);
+    }
+  }
 
   if (!res.ok) {
     let errBody: unknown = undefined;

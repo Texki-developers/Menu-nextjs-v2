@@ -11,8 +11,11 @@ import {
     LogOut,
     ChevronRight,
     Heart,
+    MapPin,
 } from "lucide-react";
 import { Button } from "@/components/atoms/button";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 
 // Mock data for past orders
 const PAST_ORDERS_MOCK = [
@@ -44,6 +47,7 @@ const PAST_ORDERS_MOCK = [
 
 const AccountScreen = () => {
     const t = useTranslations("account");
+    const params: { branchId: string } = useParams();
 
     return (
         <div className="pb-6 animate-in fade-in slide-in-from-right-8 duration-300 bg-gray-50 min-h-screen">
@@ -124,6 +128,21 @@ const AccountScreen = () => {
 
             {/* Menu List */}
             <div className="px-5 space-y-2">
+                <Link href={`/${params.branchId}/account/addresses`}>
+                    <Button
+                        variant="outline"
+                        fullWidth
+                        size="base"
+                        rounded="lg"
+                        rightIcon={<ChevronRight size={18} className="text-gray-300" />}
+                        className="justify-between p-4"
+                    >
+                        <div className="flex items-center gap-3">
+                            <MapPin size={20} className="text-gray-500" />
+                            <span className="text-gray-700">{t("savedAddresses")}</span>
+                        </div>
+                    </Button>
+                </Link>
                 {[
                     { icon: Heart, label: t("savedItems") },
                     { icon: HelpCircle, label: t("helpSupport") },
