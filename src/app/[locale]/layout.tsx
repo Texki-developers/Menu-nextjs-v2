@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 import LanguagePopup from "@/components/organisms/language-popup/LanguagePopup";
+import QueryProvider from "@/providers/QueryProvider";
 
 export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
@@ -19,8 +20,10 @@ export default async function RootLayout({ children, params }: { children: React
             <body className="w-full min-h-dvh max-h-dvh overflow-hidden! max-w-container mx-auto h-full relative">
                 <div className="container">
                     <NextIntlClientProvider>
-                        <LanguagePopup />
-                        {children}
+                        <QueryProvider>
+                            <LanguagePopup />
+                            {children}
+                        </QueryProvider>
                     </NextIntlClientProvider>
                 </div>
             </body>

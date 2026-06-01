@@ -90,6 +90,70 @@ export async function getBranchMenu(branchId: string): Promise<BranchMenuRespons
   }
 }
 
+export interface BranchMenuSummary {
+  id: string;
+  name: string;
+  type: string;
+  description?: string;
+  schedule?: Record<string, unknown>;
+  is_currently_active: boolean;
+}
+
+interface BranchMenusResponse {
+  menus: BranchMenuSummary[];
+}
+
+export async function getBranchMenus(branchId: string): Promise<BranchMenuSummary[]> {
+  if (!API_BASE_URL) return [];
+  try {
+    const res = await apiFetch<BranchMenusResponse>(`/public/branches/${branchId}/menus`, {
+      revalidate: 60,
+    });
+    return res?.menus ?? [];
+  } catch (err) {
+    console.error("[getBranchMenus] failed:", err);
+    return [];
+  }
+}
+
+export interface CategorySummary {
+  id: string;
+  name: string;
+  icon?: string;
+  image_url?: string;
+  item_count: number;
+}
+
+interface CategoriesResponse {
+  categories: CategorySummary[];
+}
+
+export async function listCategories(
+  branchId: string,
+  menuId: string,
+): Promise<CategorySummary[]> {
+  const res = await apiFetch<CategoriesResponse>(
+    `/public/branches/${branchId}/menus/${menuId}/categories`,
+  );
+  return res?.categories ?? [];
+}
+
+interface ItemsResponse {
+  items: CustomerMenuItem[];
+}
+
+export async function listItems(
+  branchId: string,
+  categoryId: string,
+  menuId: string,
+): Promise<CustomerMenuItem[]> {
+  const res = await apiFetch<ItemsResponse>(
+    `/public/branches/${branchId}/categories/${categoryId}/items`,
+    { query: { menuId } },
+  );
+  return res?.items ?? [];
+}
+
 export async function getProducts(branchId: string): Promise<ProductConfig[]> {
   const menu = await getBranchMenu(branchId);
   if (!menu) return productsConfig;
