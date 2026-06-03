@@ -17,6 +17,8 @@ const ListingTemplate = async ({ branchId }: ListingTemplateProps) => {
         getBranchFilters(branchId),
     ]);
 
+    console.log({branch, menus, filterData});
+
     void branch;
 
     const filters = filterData?.filters ?? [];
