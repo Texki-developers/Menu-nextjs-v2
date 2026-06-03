@@ -68,7 +68,7 @@ const page = async ({ params }: PageProps) => {
     for (const e of detail?.item.extras ?? []) extraPrices[e.extra_uuid] = e.price;
 
     return (
-        <div className="bg-gray-100 w-full h-dvh">
+        <div className="bg-gray-100 w-full h-dvh overflow-y-auto">
             <ProductMedia
                 images={product.images || [product.image]}
                 alt={product.title}

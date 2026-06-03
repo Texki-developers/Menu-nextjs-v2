@@ -27,7 +27,7 @@ const ProductContent = ({ product }: ProductContentProps) => {
   return (
     <div className="w-full h-full min-h-dvh relative z-1 pointer-events-none">
       <div className="w-full h-[calc(min(100vw,440px)-20px)]"></div>
-      <div className="bg-white p-4 pb-30 h-full rounded-t-2xl pointer-events-auto ">
+      <div className="bg-white p-4 pb-60 h-full rounded-t-2xl pointer-events-auto">
         <div className="mx-auto w-12 h-1 bg-gray-500 rounded-full "></div>
 
         {/* AR Button */}
