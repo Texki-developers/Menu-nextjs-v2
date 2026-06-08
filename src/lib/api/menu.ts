@@ -154,6 +154,30 @@ export async function listItems(
   return res?.items ?? [];
 }
 
+export interface SearchItemsParams {
+  query?: string;
+  type?: string;
+  spice_level?: string;
+  tags?: string;
+  price_min?: number;
+  price_max?: number;
+  featured?: boolean;
+  sort_by?: "price" | "name" | "featured" | "created_at";
+  sort_order?: "asc" | "desc";
+}
+
+export async function searchItems(
+  branchId: string,
+  menuId: string,
+  params: SearchItemsParams,
+): Promise<CustomerMenuItem[]> {
+  const res = await apiFetch<ItemsResponse>(
+    `/public/branches/${branchId}/search`,
+    { query: { menuId, ...params } },
+  );
+  return res?.items ?? [];
+}
+
 export async function getProducts(branchId: string): Promise<ProductConfig[]> {
   const menu = await getBranchMenu(branchId);
   if (!menu) return productsConfig;

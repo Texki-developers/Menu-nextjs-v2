@@ -1,7 +1,8 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
-import { listCategories, listItems } from "@/lib/api/menu";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { listCategories, listItems, searchItems } from "@/lib/api/menu";
+import type { SearchItemsParams } from "@/lib/api/menu";
 
 export function useCategories(branchId: string, menuId: string | null) {
   return useQuery({
@@ -20,5 +21,19 @@ export function useItems(
     queryKey: ["items", branchId, menuId, categoryId],
     queryFn: () => listItems(branchId, categoryId as string, menuId as string),
     enabled: !!categoryId && !!menuId,
+  });
+}
+
+export function useSearchItems(
+  branchId: string,
+  menuId: string | null,
+  params: SearchItemsParams,
+  enabled: boolean,
+) {
+  return useQuery({
+    queryKey: ["search-items", branchId, menuId, params],
+    queryFn: () => searchItems(branchId, menuId as string, params),
+    enabled: enabled && !!menuId,
+    placeholderData: keepPreviousData,
   });
 }

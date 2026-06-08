@@ -44,28 +44,30 @@ const ItemListRow = ({ item, index }: ItemListRowProps) => {
 
   return (
     <Link href={href} className="flex no-underline text-inherit" style={{ gap: 13 }}>
-      {hasImage ? (
-        <div
-          className="relative overflow-hidden"
-          style={{ width: 82, height: 82, borderRadius: 14 }}
-        >
-          <Image
-            src={primaryMedia!.url}
-            alt={item.name}
-            fill
-            sizes="82px"
-            className="object-cover"
+      <div className="relative shrink-0">
+        {hasImage ? (
+          <div
+            className="relative overflow-hidden"
+            style={{ width: 82, height: 82, borderRadius: 14 }}
+          >
+            <Image
+              src={primaryMedia!.url}
+              alt={item.name}
+              fill
+              sizes="82px"
+              className="object-cover"
+            />
+          </div>
+        ) : (
+          <Photo
+            label={item.name.split(" ")[0]}
+            h={82}
+            r={14}
+            i={index}
+            className="w-[82px]!"
           />
-        </div>
-      ) : (
-        <Photo
-          label={item.name.split(" ")[0]}
-          h={82}
-          r={14}
-          i={index}
-          className="!w-[82px] flex-shrink-0"
-        />
-      )}
+        )}
+      </div>
       <div
         className="flex-1 flex flex-col min-w-0"
         style={{ gap: 3, paddingTop: 1 }}

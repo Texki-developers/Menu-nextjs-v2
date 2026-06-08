@@ -2,8 +2,13 @@
 
 import { BackButton } from "@/components/atoms/back-button";
 import { FavoriteButton } from "@/components/atoms/favorite-button";
+import FavouriteToggle from "./FavouriteToggle";
 
-const ProductButtons = () => {
+interface ProductButtonsProps {
+    menuItemId?: string;
+}
+
+const ProductButtons = ({ menuItemId }: ProductButtonsProps) => {
     return (
         <div className="fixed top-0 left-0 right-0 z-2 pointer-events-none">
             <div className="container relative">
@@ -14,7 +19,7 @@ const ProductButtons = () => {
 
                 {/* Favorite Button */}
                 <div className="absolute top-4 right-4 z-10 pointer-events-auto">
-                    <FavoriteButton />
+                    {menuItemId ? <FavouriteToggle menuItemId={menuItemId} /> : <FavoriteButton />}
                 </div>
             </div>
         </div>

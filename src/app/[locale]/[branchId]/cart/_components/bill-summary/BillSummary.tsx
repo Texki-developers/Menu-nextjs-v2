@@ -5,13 +5,13 @@ import Price from "@/components/organisms/price/Price";
 
 interface BillSummaryProps {
     subtotal: number;
-    deliveryFee: number;
-    discount: number;
+    deliveryFee?: number;
+    discount?: number;
     total: number;
     distance?: string;
 }
 
-const BillSummary = ({ subtotal, deliveryFee, discount, total, distance }: BillSummaryProps) => {
+const BillSummary = ({ subtotal, deliveryFee = 0, discount = 0, total, distance }: BillSummaryProps) => {
     const t = useTranslations("cart");
     return (
         <div className="bg-white mx-5 mt-2 rounded-2xl p-5 shadow-sm border border-gray-100 mb-6">
@@ -20,17 +20,19 @@ const BillSummary = ({ subtotal, deliveryFee, discount, total, distance }: BillS
                     <span>{t("subtotal")}</span>
                     <Price price={subtotal} size="sm" color="default" className="items-center" />
                 </div>
-                <div className="flex justify-between text-gray-500">
-                    <span className="flex items-center gap-1">
-                        {t("deliveryFee")}{" "}
-                        {distance && (
-                            <span className="text-[10px] bg-gray-100 px-1 rounded">
-                                {distance}
-                            </span>
-                        )}
-                    </span>
-                    <Price price={deliveryFee} size="sm" color="default" className="items-center" />
-                </div>
+                {deliveryFee > 0 && (
+                    <div className="flex justify-between text-gray-500">
+                        <span className="flex items-center gap-1">
+                            {t("deliveryFee")}{" "}
+                            {distance && (
+                                <span className="text-[10px] bg-gray-100 px-1 rounded">
+                                    {distance}
+                                </span>
+                            )}
+                        </span>
+                        <Price price={deliveryFee} size="sm" color="default" className="items-center" />
+                    </div>
+                )}
                 {discount > 0 && (
                     <div className="flex justify-between text-green-600">
                         <span>{t("discount")}</span>

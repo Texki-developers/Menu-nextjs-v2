@@ -1,15 +1,23 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 import Price from "@/components/organisms/price/Price";
 import { Button } from "@/components/atoms/button";
 
 interface CheckoutFooterProps {
     total: number;
+    branchId: string;
 }
 
-const CheckoutFooter = ({ total }: CheckoutFooterProps) => {
+const CheckoutFooter = ({ total, branchId }: CheckoutFooterProps) => {
+    const router = useRouter();
+    const locale = useLocale();
     return (
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-5 pb-8 shadow-[0_-5px_20px_rgba(0,0,0,0.05)] z-50 rounded-t-3xl max-w-md mx-auto">
             <Button
+                onClick={() => router.push(`/${locale}/${branchId}/checkout`)}
                 variant="secondary"
                 fullWidth
                 size="lg"

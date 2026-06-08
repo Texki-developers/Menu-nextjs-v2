@@ -7,7 +7,7 @@ import EmptyCart from "./_components/empty-cart/EmptyCart";
 import UpsellSection from "./_components/upsell-section/UpsellSection";
 import BillSummary from "./_components/bill-summary/BillSummary";
 import CheckoutFooter from "./_components/checkout-footer/CheckoutFooter";
-import { upsellItemsConfig, deliveryFee, discount } from "./cart.config";
+import { upsellItemsConfig } from "./cart.config";
 import { useCartStore } from "@/store/cart/cart.store";
 
 interface CartPageProps {
@@ -29,7 +29,7 @@ const Cart = ({ params }: CartPageProps) => {
 
     const items = cart?.items ?? [];
     const subtotal = cart?.totals.subtotal ?? 0;
-    const total = subtotal + deliveryFee - discount;
+    const total = subtotal;
 
     return (
         <div className="pb-30 animate-in fade-in slide-in-from-right-8 duration-300">
@@ -76,16 +76,10 @@ const Cart = ({ params }: CartPageProps) => {
             {items.length > 0 && <UpsellSection items={upsellItemsConfig} />}
 
             {items.length > 0 && (
-                <BillSummary
-                    subtotal={subtotal}
-                    deliveryFee={deliveryFee}
-                    discount={discount}
-                    total={total}
-                    distance="2.5km"
-                />
+                <BillSummary subtotal={subtotal} total={total} />
             )}
 
-            {items.length > 0 && <CheckoutFooter total={total} />}
+            {items.length > 0 && <CheckoutFooter total={total} branchId={branchId} />}
         </div>
     );
 };

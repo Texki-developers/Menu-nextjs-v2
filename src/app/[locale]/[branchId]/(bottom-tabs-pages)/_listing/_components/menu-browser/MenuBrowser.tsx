@@ -2,7 +2,14 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useMenuSelectionStore } from "@/stores/menuSelectionStore";
-import { useCategories, useItems } from "@/lib/queries/use-menu-cascade";
+import { useFilterStore } from "@/store/filter/filter.store";
+import { useDebouncedValue } from "@/hooks/useDebouncedValue.hook";
+import { normalizeFilters } from "@/lib/filters/normalize-filters";
+import {
+    useCategories,
+    useItems,
+    useSearchItems,
+} from "@/lib/queries/use-menu-cascade";
 import type { BranchMenuSummary } from "@/lib/api/menu";
 import type { FilterDefinition, SortOptionDefinition } from "@/lib/api/filters";
 import MenuControl from "./MenuControl";
@@ -20,13 +27,40 @@ interface MenuBrowserProps {
     sortOptions: SortOptionDefinition[];
 }
 
-const MenuBrowser = ({ branchId, menus }: MenuBrowserProps) => {
+const MenuBrowser = ({ branchId, menus, filters, sortOptions }: MenuBrowserProps) => {
     const selectedMenuId = useMenuSelectionStore((s) => s.selectedMenuId);
     const selectedCategoryId = useMenuSelectionStore((s) => s.selectedCategoryId);
     const setSelectedMenuId = useMenuSelectionStore((s) => s.setSelectedMenuId);
     const setSelectedCategoryId = useMenuSelectionStore((s) => s.setSelectedCategoryId);
 
+    const searchQuery = useFilterStore((s) => s.searchQuery);
+    const setSearchQuery = useFilterStore((s) => s.setSearchQuery);
+    const selectedFilters = useFilterStore((s) => s.selectedFilters);
+    const activeSortId = useFilterStore((s) => s.activeSortId);
+    const resetAll = useFilterStore((s) => s.resetAll);
+
     const [sheetOpen, setSheetOpen] = useState(false);
+
+    const debouncedQuery = useDebouncedValue(searchQuery, 300);
+    const isSearchActive =
+        debouncedQuery.trim() !== "" ||
+        Object.keys(selectedFilters).length > 0 ||
+        activeSortId !== null;
+
+    const searchParams = useMemo(
+        () => ({
+            ...(debouncedQuery.trim() ? { query: debouncedQuery.trim() } : {}),
+            ...normalizeFilters(selectedFilters, activeSortId, filters, sortOptions),
+        }),
+        [debouncedQuery, selectedFilters, activeSortId, filters, sortOptions],
+    );
+
+    const searchItemsQuery = useSearchItems(
+        branchId,
+        selectedMenuId,
+        searchParams,
+        isSearchActive,
+    );
 
     useEffect(() => {
         if (selectedMenuId || menus.length === 0) return;
@@ -74,7 +108,73 @@ const MenuBrowser = ({ branchId, menus }: MenuBrowserProps) => {
 
     const menuState: "live" | "upcoming" = activeMenu?.is_currently_active ? "live" : "upcoming";
 
+    const clearSearch = () => {
+        setSearchQuery("");
+        resetAll();
+    };
+
+    const renderSearchResults = () => {
+        const results = searchItemsQuery.data ?? [];
+        return (
+            <>
+                <div
+                    className="flex items-center justify-between"
+                    style={{ padding: "0 18px" }}
+                >
+                    <span className="text-[#7A7062]" style={{ fontSize: 13, fontWeight: 600 }}>
+                        {searchItemsQuery.isLoading
+                            ? "Searching…"
+                            : `${results.length} ${results.length === 1 ? "result" : "results"}`}
+                    </span>
+                    <button
+                        type="button"
+                        onClick={clearSearch}
+                        className="font-extrabold text-[#EC5A2A]"
+                        style={{ fontSize: 13 }}
+                    >
+                        Clear
+                    </button>
+                </div>
+                <div style={{ height: 14 }} />
+                {searchItemsQuery.isLoading ? (
+                    <div className="flex flex-col" style={{ gap: 18 }}>
+                        <SkRow />
+                        <SkRow />
+                        <SkRow />
+                    </div>
+                ) : results.length === 0 ? (
+                    <EmptyState
+                        glyph={
+                            <svg width={28} height={28} viewBox="0 0 24 24" fill="none">
+                                <circle cx="11" cy="11" r="7" stroke="#A89E90" strokeWidth="1.8" />
+                                <path
+                                    d="M20 20l-3.2-3.2"
+                                    stroke="#A89E90"
+                                    strokeWidth="1.8"
+                                    strokeLinecap="round"
+                                />
+                            </svg>
+                        }
+                        title="No matches"
+                        body="Try a different search or adjust your filters."
+                        action="Clear search"
+                        onAction={clearSearch}
+                    />
+                ) : (
+                    <div className="flex flex-col" style={{ gap: 18 }}>
+                        {results.map((it, i) => (
+                            <ItemListRow key={it.id} item={it} index={i} />
+                        ))}
+                    </div>
+                )}
+            </>
+        );
+    };
+
     const renderBody = () => {
+        if (isSearchActive) {
+            return renderSearchResults();
+        }
         if (categoriesQuery.isLoading) {
             return (
                 <>

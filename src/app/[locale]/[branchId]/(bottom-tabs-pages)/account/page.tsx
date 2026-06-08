@@ -143,8 +143,22 @@ const AccountScreen = () => {
                         </div>
                     </Button>
                 </Link>
+                <Link href={`/${params.branchId}/account/saved`}>
+                    <Button
+                        variant="outline"
+                        fullWidth
+                        size="base"
+                        rounded="lg"
+                        rightIcon={<ChevronRight size={18} className="text-gray-300" />}
+                        className="justify-between p-4"
+                    >
+                        <div className="flex items-center gap-3">
+                            <Heart size={20} className="text-gray-500" />
+                            <span className="text-gray-700">{t("savedItems")}</span>
+                        </div>
+                    </Button>
+                </Link>
                 {[
-                    { icon: Heart, label: t("savedItems") },
                     { icon: HelpCircle, label: t("helpSupport") },
                     { icon: LogOut, label: t("logOut"), variant: "text-destructive" as const },
                 ].map((item, idx) => (
