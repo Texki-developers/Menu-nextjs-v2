@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useMemo, useState } from "react";
+import { use, useEffect, useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Search as SearchIcon, X } from "lucide-react";
 import { BackButton } from "@/components/atoms/back-button";
@@ -35,6 +35,15 @@ const SearchPage = ({ params }: SearchPageProps) => {
     null;
 
   const [query, setQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Focus on mount. autoFocus alone is unreliable right after a route change
+  // (notably on mobile), so focus from an effect on the next frame too.
+  useEffect(() => {
+    const id = requestAnimationFrame(() => inputRef.current?.focus());
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   const debounced = useDebouncedValue(query, 300);
   const trimmed = debounced.trim();
   const hasQuery = trimmed !== "";
@@ -58,6 +67,7 @@ const SearchPage = ({ params }: SearchPageProps) => {
             <SearchIcon size={18} />
           </span>
           <input
+            ref={inputRef}
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus
             type="text"
