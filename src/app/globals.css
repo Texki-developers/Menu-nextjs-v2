@@ -76,3 +76,11 @@ html {
 .max-w-container {
   @apply max-w-[440px] mx-auto;
 }
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
