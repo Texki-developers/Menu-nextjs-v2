@@ -32,6 +32,17 @@ export interface ProductConfig {
   spiceLevel?: string;
   tags?: string[];
   isFeatured?: boolean;
+  /** Detail-page attributes. */
+  calories?: number;
+  nutrition?: {
+    protein?: number;
+    carbs?: number;
+    fat?: number;
+    fiber?: number;
+  };
+  allergens?: string[];
+  specialNote?: string;
+  warningNote?: string;
 }
 
 export const productsConfig: ProductConfig[] = [
