@@ -27,7 +27,7 @@ export default function ReceiptPage() {
     setTags((prev) => (prev.includes(tag) ? prev.filter((x) => x !== tag) : [...prev, tag]));
 
   return (
-    <div className="min-h-full px-4 pb-7 pt-[50px]">
+    <div className="min-h-full px-4 pb-7 pt-5">
       <div className="mb-[14px] font-display text-[22px] font-bold text-ink">{t("Receipt", "الإيصال")}</div>
 
       <div className="mb-4">

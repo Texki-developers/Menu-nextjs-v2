@@ -45,7 +45,7 @@ export default function BillPage() {
   };
 
   return (
-    <div className="min-h-full px-4 pb-32 pt-[50px]">
+    <div className="min-h-full px-4 pb-32 pt-5">
       <div className="mb-4 flex items-center gap-[10px]">
         <IconButton className="text-[17px]" onClick={() => go(routes.order)} aria-label="Back">
           {back}

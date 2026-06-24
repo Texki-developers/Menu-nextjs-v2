@@ -57,7 +57,7 @@ export default function TableTabPage() {
   const onlyYou = orders.filter((o) => !o.me).length === 0;
 
   return (
-    <div className="min-h-full px-4 pb-28 pt-[50px]">
+    <div className="min-h-full px-4 pb-28 pt-5">
       <div className="mb-[14px] flex items-center gap-[10px]">
         <IconButton className="text-[17px]" onClick={() => go(routes.order)} aria-label="Back">
           {back}

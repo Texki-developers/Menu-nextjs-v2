@@ -45,7 +45,7 @@ export default function PaymentPage() {
   };
 
   return (
-    <div className="relative min-h-full px-4 pb-32 pt-[50px]">
+    <div className="relative min-h-full px-4 pb-32 pt-5">
       {state === "success" && (
         <div className="absolute inset-0 z-[5] flex flex-col items-center justify-center bg-surface p-[30px]">
           <div className="animate-bump flex h-[72px] w-[72px] items-center justify-center rounded-full bg-green text-[36px] text-white">

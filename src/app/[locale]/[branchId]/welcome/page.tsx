@@ -32,7 +32,7 @@ export default function WelcomePage() {
 
   return (
     <div
-      className="flex min-h-full flex-col items-center justify-center px-7 pb-7 pt-[60px] text-center"
+      className="flex min-h-full flex-col items-center justify-center px-7 pb-7 pt-6 text-center"
       style={{ background: "radial-gradient(120% 80% at 50% 0%,#FFF6E6 0%,#FBF8F3 55%)" }}
     >
       <Logo size={72} className="animate-rise shadow-[0_12px_30px_rgba(36,27,22,0.22)]" />

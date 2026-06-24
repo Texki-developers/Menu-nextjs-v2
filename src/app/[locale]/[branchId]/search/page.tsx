@@ -33,7 +33,7 @@ export default function SearchPage() {
   const filters = [t("🌿 Halal only", "🌿 حلال فقط"), t("Veg", "نباتي"), t("Spice", "حار"), t("Price", "السعر")];
 
   return (
-    <div className="min-h-full px-4 pb-6 pt-[50px]">
+    <div className="min-h-full px-4 pb-6 pt-5">
       <div className="mb-[14px] flex items-center gap-[10px]">
         <IconButton className="text-[17px]" onClick={() => go(routes.menu)} aria-label="Back">
           {back}

@@ -20,16 +20,17 @@ export default function OrderTrackerPage() {
   const mine = orders.filter((o) => o.me);
   const newest = mine[0];
 
-  // gentle auto-advance of the freshest order, mirroring the prototype
+  // gentle one-step advance of a just-placed order (Placed → Preparing),
+  // mirroring the prototype. Further status comes from the kitchen/API later.
   useEffect(() => {
-    if (!newest || newest.idx >= newest.steps.length - 1) return;
+    if (!newest || newest.idx !== 0) return;
     const id = setTimeout(() => bumpOrder(newest.num), 2200);
     return () => clearTimeout(id);
   }, [newest, bumpOrder]);
 
   if (mine.length === 0) {
     return (
-      <div className="min-h-full px-4 pt-[50px]">
+      <div className="min-h-full px-4 pt-5">
         <div className="px-5 py-[50px] text-center">
           <div className="text-[40px]">🍽️</div>
           <div className="mt-[10px] font-display text-[18px] font-semibold text-ink">
@@ -52,7 +53,7 @@ export default function OrderTrackerPage() {
   ];
 
   return (
-    <div className="min-h-full px-4 pb-6 pt-[50px]">
+    <div className="min-h-full px-4 pb-6 pt-5">
       <div className="mb-2 text-center">
         <div className="animate-bump mx-auto flex h-[54px] w-[54px] items-center justify-center rounded-full bg-green text-[26px] text-white">
           ✓

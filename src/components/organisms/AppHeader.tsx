@@ -10,7 +10,7 @@ import { pick, type Locale } from "@/lib/menu";
 /** Menu-home top bar: brand + table, locale switch, call-waiter bell. */
 export function AppHeader({ locale, onBell }: { locale: Locale; onBell: () => void }) {
   return (
-    <div className="flex items-center justify-between gap-[10px] px-4 pb-3 pt-[50px]">
+    <div className="flex items-center justify-between gap-[10px] px-4 pb-3 pt-5">
       <div className="flex items-center gap-[10px]">
         <Logo />
         <div>
