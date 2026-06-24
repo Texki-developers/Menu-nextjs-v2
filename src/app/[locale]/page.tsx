@@ -1,12 +1,7 @@
-import { useTranslations } from "next-intl";
+import { redirect } from "@/i18n/navigation";
+import { DEFAULT_BRANCH } from "@/constants/routes";
 
-const HomePage = () => {
-    const t = useTranslations("Home");
-    return (
-        <div>
-            <h1>{t("title")}</h1>
-        </div>
-    );
-};
-
-export default HomePage;
+export default async function LocaleRoot({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  redirect({ href: `/${DEFAULT_BRANCH}/welcome`, locale });
+}

@@ -1,86 +1,117 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
-.sk {
-  background: linear-gradient(90deg, #ECE7DF 0%, #F5F1EB 50%, #ECE7DF 100%);
-  background-size: 200% 100%;
-  animation: skp 1.3s ease-in-out infinite;
-}
-@keyframes skp {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-.menu-home-font {
-  font-family: "Plus Jakarta Sans", -apple-system, system-ui, sans-serif;
-}
-.menu-home-mono {
-  font-family: "DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
-}
-
+/* ============================================================
+   Saffra — design tokens
+   Palette, type and shape from the "Saffra Dine-In" design system.
+   ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #FF6B35;
-  --secondary: #EF4444;
-  --bg: #ffffff;
-  --text: #171717;
-  --border: #e5e7eb;
-  --popup: #eeeeee;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --black: #000000;
-  --success: #22c55e;
-  --success-light: #dcfce7;
+  /* color */
+  --ink: #241b16;
+  --surface: #fbf8f3;
+  --body: #e7e5df;
+  --saffron: #e8920c;
+  --saffron-dark: #c77a05;
+  --green: #5e8c53; /* halal / ready */
+  --green-ink: #42632f;
+  --pom: #c5283d; /* pomegranate / rejected */
+  --info: #2f6f8f; /* preparing */
+  --sand: #f4eee4; /* secondary surface */
+  --line: #ece4d8; /* hairline border */
+  --muted: #6e635b;
+  --faint: #9c8e7f;
+  --dashed: #dccfbe;
+  --skel-a: #f0e8dc;
+  --skel-b: #f8f2e8;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --primary: #FF8C65;
-    --secondary: #F87171;
-    --bg: #0a0a0a;
-    --text: #ededed;
-    --border: #374151;
-  }
-} */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-bg: var(--bg);
-  --color-text: var(--text);
-  --color-border: var(--border);
-  --color-popup: var(--popup);
-  --color-gray-100: var(--gray-100);
-  --color-gray-200: var(--gray-200);
-  --color-black: var(--black);
-  --color-success: var(--success);
-  --color-success-light: var(--success-light);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-surface: var(--surface);
+  --color-body: var(--body);
+  --color-saffron: var(--saffron);
+  --color-saffron-dark: var(--saffron-dark);
+  --color-green: var(--green);
+  --color-green-ink: var(--green-ink);
+  --color-pom: var(--pom);
+  --color-info: var(--info);
+  --color-sand: var(--sand);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-dashed: var(--dashed);
+
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-arabic: "IBM Plex Sans Arabic", system-ui, sans-serif;
+
+  --radius-card: 20px;
+  --radius-btn: 14px;
+  --radius-sheet: 28px;
+  --radius-image: 16px;
 }
 
 html {
   max-height: 100dvh;
   overflow-y: hidden;
 }
+body {
+  background: var(--body);
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
 
+/* shared layout helpers (preserved from previous shell) */
 .container {
   @apply max-w-[440px] mx-auto;
 }
-
 .max-w-container {
   @apply max-w-[440px] mx-auto;
 }
-
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .no-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
   display: none;
+}
+
+/* ============================================================
+   Motion
+   ============================================================ */
+@keyframes sf-rise { 0% { opacity: 0; transform: translateY(8px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes sf-fade { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes sf-shimmer { 0% { background-position: -180px 0; } 100% { background-position: 340px 0; } }
+@keyframes sf-steam { 0% { opacity: 0; transform: translateY(2px) scaleY(.7); } 45% { opacity: .85; } 100% { opacity: 0; transform: translateY(-12px) scaleY(1.15); } }
+@keyframes sf-pulse { 0% { box-shadow: 0 0 0 0 rgba(94,140,83,.55); } 70% { box-shadow: 0 0 0 14px rgba(94,140,83,0); } 100% { box-shadow: 0 0 0 0 rgba(94,140,83,0); } }
+@keyframes sf-bump { 0% { transform: scale(1); } 40% { transform: scale(1.18); } 100% { transform: scale(1); } }
+@keyframes sf-sheet { 0% { transform: translateY(100%); } 100% { transform: translateY(0); } }
+@keyframes sf-spin { 100% { transform: rotate(360deg); } }
+
+.animate-rise { animation: sf-rise .5s ease; }
+.animate-fade { animation: sf-fade .3s ease; }
+.animate-bump { animation: sf-bump .3s ease; }
+.animate-sheet { animation: sf-sheet .24s ease-out; }
+.animate-spin-slow { animation: sf-spin .7s linear infinite; }
+.animate-pulse-ring { animation: sf-pulse 1.6s ease-out 1; }
+.animate-steam { animation: sf-steam 1.4s ease-in-out infinite; filter: blur(1px); }
+
+.sf-skel {
+  background: linear-gradient(90deg, var(--skel-a) 25%, var(--skel-b) 50%, var(--skel-a) 75%);
+  background-size: 400px 100%;
+  animation: sf-shimmer 1.3s infinite linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-steam,
+  .sf-skel { animation: none !important; }
+  *,
+  *::before,
+  *::after { animation-duration: .001ms !important; }
 }
